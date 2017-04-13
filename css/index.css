@@ -33,10 +33,11 @@ h4 {
     font-family: 'Raleway', 'Open Sans', sans-serif;
     margin: 0;
     line-height: 1;
-    font-weight: 700;
+
 }
 h4{
     line-height: 80px;
+    font-weight: 700;
 }
 a{
     position: relative;
