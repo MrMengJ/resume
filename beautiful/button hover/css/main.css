@@ -1,0 +1,599 @@
+body {
+    padding-top: 50px;
+    font-family: 'Open Sans', Helvetica, arial, sans-serif;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+*,
+::before,
+::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/*定义这么多是为了以后要是有改动的话可以好维护*/
+html i, html em,
+html b, html strong,
+html span {
+    -webkit-transition: none;
+    transition: none;
+}
+
+/*为了不遮住a标签上的字*/
+::before,
+::after {
+    z-index: -1;
+}
+
+h1,
+h4 {
+    font-family: 'Raleway', 'Open Sans', sans-serif;
+    margin: 0;
+    line-height: 1;
+}
+
+a {
+    text-decoration: none;
+    line-height: 80px;
+    color: black;
+}
+
+.center {
+    /*width: 100%;*/
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.wrap {
+    width: 50%;
+    float: left;
+}
+
+[class^="btn-"] {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    height: 80px;
+    max-width: 250px;
+    text-transform: uppercase;
+    overflow: hidden;
+    /*currentColor是为了取a标签框内字体一样的颜色，如果a标签里的字体是自己定义的想要的字体颜色而不是通过继承得来的，那么currentColor是可以取消不写的，因为默认就是取字体一样的颜色的*/
+    border: 1px solid currentColor;
+}
+
+.btn-0 {
+    color: #925073;
+}
+
+.btn-0::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 80px;
+    /*background: #4c1d36;*/
+    border: 0 solid;
+    border-color: transparent #4c1d36 transparent transparent;
+}
+
+.btn-0:hover {
+    color: #dfccd6;
+}
+
+/*动画填充效果，颜色其实是::before的*/
+.btn-0:hover::before {
+    /*width: 250px;*/
+    /*有两个实现方案：一个是通过::before（width:250px;）的背景色填充，即宽度变大;一个是通过::before的有边框的宽度填充*/
+    border-right-width: 250px;
+}
+
+.btn-0:active {
+    background: #7f315a;
+}
+
+.btn-1 {
+    color: #af4e49;
+}
+
+.btn-1::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #611c19 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-1:hover {
+    color: #e8cbca;
+}
+
+.btn-1:hover::before {
+    border-width: 330px 330px 0 0;
+}
+
+.btn-1:active {
+    background: #a12f29;
+}
+
+.btn-1-2 {
+    color: #61cdbe;
+}
+
+.btn-1-2::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent transparent #29766b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-1-2::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent #29766b transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.btn-1-2:hover {
+    color: #d1f0ec;
+}
+
+.btn-1-2:hover::before {
+    border-width: 206.25px 0 0 206.25px;
+}
+
+.btn-1-2:hover::after {
+    border-width: 0 0 206.25px 206.25px;
+}
+
+.btn-1-2:active {
+    background: #45c4b3;
+}
+
+.btn-2 {
+    color: #306570;
+}
+
+.btn-2::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent transparent #072c34;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-2::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent #072c34 transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-2:hover {
+    color: #c2d2d5;
+}
+
+.btn-2:hover::before {
+    border-width: 165px 0 0 165px;
+}
+
+.btn-2:hover::after {
+    border-width: 0 165px 165px 0;
+}
+
+.btn-2:active {
+    background: #0c4a57;
+}
+
+.btn-3 {
+    color: #c45561;
+}
+
+.btn-3::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent transparent #6f2129;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-3::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent #6f2129 transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-3 span::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent #6f2129 transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.btn-3 span::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #6f2129 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-3:hover {
+    color: #eecdd1;
+}
+
+.btn-3:hover::before {
+    border-width: 165px 0 0 165px;
+}
+
+.btn-3:hover::after {
+    border-width: 0 165px 165px 0;
+}
+
+.btn-3:hover span::before {
+    border-width: 0 0 165px 165px;
+}
+
+.btn-3:hover span::after {
+    border-width: 165px 165px 0 0;
+}
+
+.btn-3:active {
+    background: #b93745;
+}
+
+.btn-4 {
+    color: #7d8d5c;
+}
+
+.btn-4::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent #3d4926 transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-4::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent transparent #3d4926;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-4::before, .btn-4::after {
+    border-color: #3d4926;
+}
+
+.btn-4 span::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #3d4926 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-4 span::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent #3d4926 transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.btn-4 span::before, .btn-4 span::after {
+    border-color: #3d4926;
+}
+
+.btn-4:hover {
+    color: #d9decf;
+}
+
+.btn-4:hover::before {
+    border-width: 20px 62.5px;
+}
+
+.btn-4:hover::after {
+    border-width: 20px 62.5px;
+}
+
+/*这两种动画方案都可以，都是一样的效果*/
+/*.btn-4:hover span::before {*/
+    /*border-width: 20px 62.5px;*/
+/*}*/
+.btn-4:hover span::before{
+    border-width:0 0 40px 125px;
+}
+
+.btn-4:hover span::after {
+    border-width: 20px 62.5px;
+}
+
+.btn-4:active {
+    background: #66793f;
+}
+
+.btn-5 {
+    color: #2a4770;
+}
+
+.btn-5::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent #021734 transparent transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-5::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: transparent transparent transparent #021734;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.btn-5:hover {
+    color: #c0c9d5;
+}
+
+.btn-5:hover::before, .btn-5:hover::after {
+    border-width: 80px 262.5px;
+}
+.btn-5:hover::before{
+    border-width: 80px 0 80px 262.5px;
+}
+.btn-5:active {
+    background: #042757;
+}
+
+.btn-6 {
+    color: #41c46a;
+}
+.btn-6:before, .btn-6:after,
+.btn-6 span:before,
+.btn-6 span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 63.5px;
+    height: 0;
+    background: #136f30;
+}
+.btn-6:before {
+    left: 0;
+}
+.btn-6:after {
+    left: 125px;
+}
+.btn-6 span:before, .btn-6 span:after {
+    top: auto;
+    bottom: 0;
+}
+.btn-6 span:before {
+    left: 62.5px;
+}
+.btn-6 span:after {
+    left: 187.5px;
+}
+.btn-6:hover {
+    color: #c7eed3;
+}
+.btn-6:hover:before, .btn-6:hover:after,
+.btn-6:hover span:before,
+.btn-6:hover span:after {
+    height: 80px;
+}
+.btn-6:active {
+    background: #1fb950;
+}
+
+.btn-6 {
+    color: #377660;
+}
+
+.btn-7::before, .btn-7::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 0;
+    background: #0c3829;
+}
+/*top为auto，bottom为0,则是表示距离父元素底边框距离为0,距离上边框距离则是自适应*/
+.btn-7::after {
+    top: auto;
+    bottom: 0;
+}
+
+.btn-7:hover {
+    color: #c4d7d0;
+}
+
+.btn-7:hover::before, .btn-7:hover::after {
+    height: 40px;
+}
+
+.btn-7:active {
+    background: #145e44;
+}
+
+.btn-9 {
+    color: #9b5097;
+}
+
+
+
+@-webkit-keyframes criss-cross-left {
+    0% {
+        left: -20px;
+    }
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@keyframes criss-cross-left {
+    0% {
+        left: -20px;
+    }
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@-webkit-keyframes criss-cross-right {
+    0% {
+        right: -20px;
+    }
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        right: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+@keyframes criss-cross-right {
+    0% {
+        right: -20px;
+    }
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        right: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+
+.btn-8 {
+    position: relative;
+    color: #9248bc;
+}
+
+.btn-8::before, .btn-8::after {
+    position: absolute;
+    top: 50%;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #7f28b0;
+    border-radius: 50%;
+}
+
+.btn-8::before {
+    left: -20px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn-8::after {
+    right: -20px;
+    -webkit-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+}
+
+.btn-8:hover::before {
+    -webkit-animation: criss-cross-left 0.8s both;
+    animation: criss-cross-left 0.8s both;
+}
+
+.btn-8:hover::after {
+    -webkit-animation: criss-cross-right 0.8s both;
+    animation: criss-cross-right 0.8s both;
+}
