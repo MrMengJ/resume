@@ -1,0 +1,156 @@
+body {
+    padding-top: 50px;
+    font-family: 'Open Sans', Helvetica, arial, sans-serif;
+    text-align: center;
+    background-color: #eeeeee;
+}
+
+*,
+::before,
+::after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/*定义这么多是为了以后要是有改动的话可以好维护*/
+html i, html em,
+html b, html strong,
+html span {
+    -webkit-transition: none;
+    transition: none;
+}
+
+/*为了不遮住a标签上的字*/
+::before,
+::after {
+    z-index: -1;
+}
+
+h1,
+h4 {
+    font-family: 'Raleway', 'Open Sans', sans-serif;
+    margin: 0;
+    line-height: 1;
+    font-weight: 700;
+}
+h4{
+    line-height: 80px;
+}
+a{
+    position: relative;
+    display: block;
+    width:60%;
+    height: 80px;
+    line-height: 80px;
+    border:1px solid;
+    margin:20px auto;
+    text-transform: uppercase;
+    -webkit-line-clamp:1;
+    line-clamp:1;/*限制在一个块元素显示的文本的行数  兼容性不是很好*/
+    overflow: hidden;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+a:hover{
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    a{
+        height: 75px;
+        line-height: 80px;
+    }
+}
+@media (max-width: 992px) {
+    a{
+        height: 70px;
+        line-height: 70px;
+    }
+}
+@media (max-width: 768px) {
+    a{
+       height: 65px;
+        line-height: 65px;
+    }
+}
+@media (max-width: 640px) {
+    a{
+        height: 60px;
+        line-height: 60px;
+    }
+}
+@media (max-width: 520px) {
+    a{
+        height: 55px;
+        line-height: 55px;
+    }
+}
+@media (max-width: 460px) {
+    a{
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+
+.btn-0 {
+    color: #925073;
+}
+
+.btn-0::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 80px;
+    /*background: #4c1d36;*/
+    border: 0 solid;
+    border-color: transparent #4c1d36 transparent transparent;
+}
+
+.btn-0:hover {
+    color: #dfccd6;
+}
+
+/*动画填充效果，颜色其实是::before的*/
+.btn-0:hover::before {
+    /*width: 250px;*/
+    /*有两个实现方案：一个是通过::before（width:250px;）的背景色填充，即宽度变大;一个是通过::before的有边框的宽度填充*/
+    border-right-width: 250px;
+}
+
+.btn-0:active {
+    background: #7f315a;
+}
+
+.btn-1 {
+    color: #af4e49;
+}
+
+.btn-1::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #611c19 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-1:hover {
+    color: #e8cbca;
+}
+
+.btn-1:hover::before {
+    border-width: 330px 330px 0 0;
+}
+
+.btn-1:active {
+    background: #a12f29;
+}
