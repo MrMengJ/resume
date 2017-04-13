@@ -46,6 +46,7 @@ a{
     line-height: 80px;
     border:1px solid;
     margin:20px auto;
+    text-decoration: none;
     text-transform: uppercase;
     -webkit-line-clamp:1;
     line-clamp:1;/*限制在一个块元素显示的文本的行数  兼容性不是很好*/
