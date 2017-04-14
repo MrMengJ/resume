@@ -16,3 +16,11 @@ $('.import input').on('input propertychange',function () {
         $('.nextBtn').removeClass('active');
     }
 })
+
+//下一步是否有效
+$(".nextBtn").on('click',function () {
+    if ($(this).hasClass('active')){
+        var url = $('.nextBtn').data('href');
+        $('.nextBtn').attr('href',url);
+    }
+})

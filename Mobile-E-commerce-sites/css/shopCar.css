@@ -408,35 +408,36 @@ html,body{
         -webkit-transform:translate3d(0px, 25px, 0px);
         -moz-transform:translate3d(0px, 25px, 0px);
         -ms-transform:translate3d(0px, 25px, 0px);
-        transform:translate3d(0px, 25px, 0px);
+        transform: translate3d(0px, 25px, 0px);
     }
     75% {
         -webkit-transform:translate3d(0px, -10px, 0px);
         -moz-transform:translate3d(0px, -10px, 0px);
         -ms-transform:translate3d(0px, -10px, 0px);
-        transform:translate3d(0px, -10px, 0px);
+        transform: translate3d(0px, -10px, 0px);
+
     }
     90% {
         -webkit-transform:translate3d(0px, 5px, 0px);
         -moz-transform:translate3d(0px, 5px, 0px);
         -ms-transform:translate3d(0px, 5px, 0px);
-        transform:translate3d(0px, 5px, 0px);
+        transform: translate3d(0px, 5px, 0px);
     }
     100% {
         opacity: 1;
         -webkit-transform:none;
         -moz-transform:none;
         -ms-transform:none;
-        transform:none;
+        transform: none;
     }
 }
 .bounceInDown {
-    animation-name: bounceInDown;
     -webkit-animation-name: bounceInDown;
-    animation-duration: 1s;
+    animation-name: bounceInDown;
     -webkit-animation-duration: 1s;
-    animation-fill-mode: both;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 /*运费提示*/
