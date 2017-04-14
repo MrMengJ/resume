@@ -28,23 +28,34 @@ $('.password input').blur(function () {
     } else {
         $('.password p').text('');
     }
-    if ($(this).val() !== $('.passwordAgain input').val()) {
-        $('.passwordAgain p').text('前后密码不一致');
-        $('.passwordAgain').val("");
-        $('.finishBtn').removeClass('active');
-    }else{
-        $('.passwordAgain p').text('');
-    }
 })
 
+
+
 //验证密码
+//第一个密码的地方验证
+$('.password input').blur(function () {
+    // if ($('.passwordAgain input').val() !== ''){
+        if ($(this).val() !== $('.passwordAgain input').val()) {
+            $('.passwordAgain p').text('前后密码不一致');
+            // $('.passwordAgain').val("");
+            $('.finishBtn').removeClass('active');
+        }else{
+            $('.passwordAgain p').text('');
+        }
+    // }
+})
+
+//第二个密码的地方验证
 $('.passwordAgain input').blur(function () {
-    if ($(this).val() !== $('.password input').val()) {
-        $('.passwordAgain p').text('前后密码不一致');
-        $(this).val("");
-        $('.finishBtn').removeClass('active');
-    }else{
-        $('.passwordAgain p').text('');
-    }
+    // if ($('.password input').val() !== ''){
+        if ($(this).val() !== $('.password input').val()) {
+            $('.passwordAgain p').text('前后密码不一致');
+            // $(this).val("");
+            $('.finishBtn').removeClass('active');
+        }else{
+            $('.passwordAgain p').text('');
+        }
+    // }
 })
 //"完成"按钮是否可用
