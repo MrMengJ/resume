@@ -13,6 +13,12 @@ $(document).ready(function () {
 
     //随机用户名
     $('.username_text span:last-child').text(randomString(10));
+
+    if ($('.yzNum input').val() !== '') {
+        $('.nextBtn').addClass('active')
+    }else{
+        $('.nextBtn').removeClass('active')
+    }
     
 })
 
@@ -32,6 +38,13 @@ $('.icon_menu').on('click', function () {
 //         $('.phoneNum p').text('')
 //     }
 // })
+
+
+// 聚焦自动全选填充
+$('.import input').focus(function () {
+    $(this).select();
+})
+
 
 //下一步高亮
 $('.yzNum input').on('input propertychange', function () {

@@ -31,7 +31,7 @@ $('.password input').blur(function () {
 })
 
 
-// 自动全选填充
+// 聚焦自动全选填充
 $('.import input').focus(function () {
     $(this).select();
 })

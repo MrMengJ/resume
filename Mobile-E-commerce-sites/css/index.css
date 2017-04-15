@@ -303,8 +303,8 @@ body{
 .secondKill .product_bot{
     width: 100%;
     overflow: auto;
-    font-size:0;
-    position: relative;
+    /*font-size:0;*/
+    /*position: relative;*/
 }
 /*.secondKill .product_bot .product_wrap{*/
     /*overflow-x: auto;*/
@@ -400,7 +400,7 @@ body{
     display: inline-block;
     /*width:25%;*/
     /*width:25%为何不行呢？？*/
-    width:24%;
+    width:23.5%;
     height:54px;
     text-align: center;
 }

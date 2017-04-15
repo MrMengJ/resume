@@ -7,6 +7,10 @@ $('.icon_menu').on('click', function () {
     $('.header_bar').toggle();
 })
 
+// 聚焦自动全选填充
+$('.import input').focus(function () {
+    $(this).select();
+})
 
 //一个月免登录
 $('.fastLogin span').on('click',function () {
