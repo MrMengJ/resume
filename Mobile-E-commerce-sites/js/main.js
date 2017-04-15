@@ -88,7 +88,7 @@ function productLength() {
     })
     // console.log(productWidth)
     // console.log($('.product_bot').width()*0.3)
-    productNum.parent('ul').width(productWidth);
+    productNum.parent('ul').width(productWidth+10);
 
     //设置product_wrap跟product_bot的高度
     // console.log($('.product_bot ul').height());
