@@ -53,7 +53,8 @@ strong{
 /*分类大区块*/
 .category{
     /*padding-top: 45px;!*头部的高度是45px*!*/
-    height: 100%;
+    /*高度用js动态控制*/
+    /*height: 100%;*/
     width: 100%;
     position: relative;
 }
@@ -71,8 +72,10 @@ strong{
 
 /*子盒子  滑动*/
 .catLeft ul{
-    /*-webkit-transition: all .3s ease 0s;*/
-    /*transition: all .3s ease 0s;*/
+    -moz-transition: all .3s ease 0s; /* Firefox 4 */
+    -webkit-transition: all .3s ease 0s; /* Safari 和 Chrome */
+    -o-transition: all .3s ease 0s; /* Opera */
+    transition: all .3s ease 0s;
     cursor: pointer;
 }
 .catLeft ul li{
