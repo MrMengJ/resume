@@ -31,6 +31,10 @@ $('.password input').blur(function () {
 })
 
 
+// 自动全选填充
+$('.import input').focus(function () {
+    $(this).select();
+})
 
 //验证密码
 //第一个密码的地方验证
@@ -58,4 +62,11 @@ $('.passwordAgain input').blur(function () {
         }
     // }
 })
+
 //"完成"按钮是否可用
+$(".finishBtn").on('click',function () {
+    if ($(this).hasClass('active')){
+        var url = $('.finishBtn').data('href');
+        $('.finishBtn').attr('href',url);
+    }
+})
