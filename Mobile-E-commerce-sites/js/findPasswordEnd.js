@@ -30,6 +30,16 @@ $('.password input').blur(function () {
     }
 })
 
+$('.passwordAgain input').blur(function () {
+    var truePassword = /^\S{6,20}$/;
+    if (!(truePassword.test($(this).val()))) {
+        $('.passwordAgain .firstP').text('登录密码长度应为6到20位');
+        $(this).val('');
+        $('.registerBtn').removeClass('active');
+    } else {
+        $('.passwordAgain .firstP').text('');
+    }
+})
 
 // 聚焦自动全选填充
 $('.import input').focus(function () {
@@ -41,11 +51,11 @@ $('.import input').focus(function () {
 $('.password input').blur(function () {
     // if ($('.passwordAgain input').val() !== ''){
         if ($(this).val() !== $('.passwordAgain input').val()) {
-            $('.passwordAgain p').text('前后密码不一致');
+            $('.passwordAgain p:last-child').text('前后密码不一致');
             // $('.passwordAgain').val("");
             $('.finishBtn').removeClass('active');
         }else{
-            $('.passwordAgain p').text('');
+            $('.passwordAgain p:last-child').text('');
         }
     // }
 })
@@ -54,11 +64,11 @@ $('.password input').blur(function () {
 $('.passwordAgain input').blur(function () {
     // if ($('.password input').val() !== ''){
         if ($(this).val() !== $('.password input').val()) {
-            $('.passwordAgain p').text('前后密码不一致');
+            $('.passwordAgain p:last-child').text('前后密码不一致');
             // $(this).val("");
             $('.finishBtn').removeClass('active');
         }else{
-            $('.passwordAgain p').text('');
+            $('.passwordAgain p:last-child').text('');
         }
     // }
 })
