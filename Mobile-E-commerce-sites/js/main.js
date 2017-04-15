@@ -91,12 +91,12 @@ function productLength() {
     productNum.parent('ul').width(productWidth);
 
     //设置product_wrap跟product_bot的高度
-    console.log($('.product_bot ul').height());
-    console.log($('.product_bot ul').height()+50);
-    $(".product_wrap").height($('.product_bot ul').height()+50);
-    $(".product_bot").height($('.product_wrap').height()-30);
-    console.log($('.product_bot ul').height());
-    // 这种方法返回undefined，为什么
+    // console.log($('.product_bot ul').height());
+    // console.log($('.product_bot ul').height()+50);
+    // $(".product_wrap").height($('.product_bot ul').height()+50);
+    // $(".product_bot").height($('.product_wrap').height()-30);
+    // console.log($('.product_bot ul').height());
+    // // 这种方法返回undefined，为什么
     // for (var i = 0; i < productNum; i++) {
     //     console.log(parseFloat($('.product_bot li :eq(i)').width()))
     //     productWidth += $('.product_bot li :eq(i)').width();

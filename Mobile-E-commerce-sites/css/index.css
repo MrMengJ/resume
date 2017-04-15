@@ -302,14 +302,15 @@ body{
 /*三个商品*/
 .secondKill .product_bot{
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     font-size:0;
     position: relative;
+    scroll-width:
 }
-.secondKill .product_bot .product_wrap{
-    overflow-x: auto;
-    overflow-y: hidden;
-}
+/*.secondKill .product_bot .product_wrap{*/
+    /*overflow-x: auto;*/
+    /*overflow-y: hidden;*/
+/*}*/
 .secondKill .product_bot ul{
     /*width: 100%;*/
     padding: 10px 0;
