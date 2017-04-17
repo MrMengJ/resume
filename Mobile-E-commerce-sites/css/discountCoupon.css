@@ -3,17 +3,17 @@ html{
 }
 @media screen and (max-width:640px){
     html{
-        font-size: 36px;
+        font-size: 24px;
     }
 }
 @media screen and (max-width: 520px){
     html{
-        font-size: 30px;
+        font-size: 22px;
     }
 }
 @media screen and (max-width: 3100px){
     html{
-        font-size: 24px;
+        font-size: 18px;
     }
 }
 
@@ -31,7 +31,7 @@ body{
     margin-left: -14px;
     line-height: 44px;
     font-size: 14px;
-    width:4em;
+    width:5em;
     height: 44px;
     position: absolute;
     text-align: center;
@@ -39,32 +39,59 @@ body{
 
 /*选择栏*/
 .bar{
-    width: 100%;
+    position: relative;
+}
+/*选择栏左*/
+.bar_left{
+    width: 90%;
     height:44px;
     background: #ffffff;
     line-height: 44px;
     text-align: center;
     margin-bottom: .32rem;
+    overflow: hidden;
 }
-.bar ul{
-    width:100%;
+.bar_left ul{
     height: 100%;
 }
-.bar li{
+.bar_left li{
     float: left;
-    width:16.66%;
+    width:6em;
     height:100%;
 }
-.bar li span{
+.bar_left li span{
     display:inline-block;
     height: 100%;
-    padding:0 1em;
+    padding:0 0.5em;
     border-bottom: 2px solid transparent;
 }
-.bar li span.active{
+.bar_left li span.active{
     color: #f23030;
     border-bottom-color: #f23030;
 }
+
+/*选择栏右*/
+.bar_right{
+    width: 10%;
+    height: 44px;
+    position: absolute;
+    top:0;
+    right: 0;
+    background: #fff;
+}
+.bar_right em{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    text-align: center;
+}
+.bar_right em img{
+    width: 9px;
+    height: 5px;
+    margin-top:20px;
+}
+
 
 /*优惠券部分*/
 .yhq{

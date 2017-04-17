@@ -150,7 +150,7 @@ function productMove() {
     },false)
 
     //touchmove  手指滑动屏幕
-    childDom/addEventListener('touchmove',function (event) {
+    childDom.addEventListener('touchmove',function (event) {
         // event.preventDefault();
         endX = event.touches[0].clientX; //获取结束时的X坐标
         moveX = endX - startX;
@@ -166,7 +166,9 @@ function productMove() {
     //touchcannel touch事件意外中断
     childDom.addEventListener('touchcannel',function () {
         //记录当前的translateX值
-        currentX = moveX + currentX;
+        if((currentX+moveX) >= -(childW - parentW) && (currentX+moveX) <= maxMoveX){
+            currentX = moveX + currentX;
+        }
     },false)
 
     //touchend 手指离开屏幕
