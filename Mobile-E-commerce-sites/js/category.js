@@ -59,12 +59,16 @@ function initLeft() {
     //添加过渡动画
     function addTransition() {
         childDom.style.webkitTransition = 'all .3 ease 0';
+        childDom.style.mozitTransition = 'all .3 ease 0';
+        childDom.style.oTransition = 'all .3 ease 0';
         childDom.style.transition = 'all .3 ease 0';
     }
 
     //删除过渡动画
     function removeTransition() {
         childDom.style.webkitTransition = 'all 0 ease 0';
+        childDom.style.mozTransition = 'all 0 ease 0';
+        childDom.style.oTransition = 'all 0 ease 0';
         childDom.style.transition = 'all 0 ease 0';
     }
 
@@ -103,6 +107,9 @@ function initLeft() {
         if ((moveY + currentY) <= maxMoveY && (moveY + currentY) >= minMoveY) {
             removeTransition();
             childDom.style.webkitTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.mozTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.oTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.msTransform = "translateY(" + (moveY + currentY) + "px)";
             childDom.style.transform = "translateY(" + (moveY + currentY) + "px)";
         }
     }, false)
@@ -117,15 +124,21 @@ function initLeft() {
         else if ((moveY + currentY) > 0) {
             currentY = 0;
             addTransition();
-            childDom.style.transform = "translateY(" + (currentY) + "px)";
             childDom.style.webkitTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.mozTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.oTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.msTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.transform = "translateY(" + (currentY) + "px)";
         }
         //上划过头就弹回
         else if ((moveY + currentY) < -(childH - parentH)) {
             currentY = -(childH - parentH);
             addTransition();
-            childDom.style.transform = "translateY(" + (currentY) + "px)";
             childDom.style.webkitTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.mozTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.msTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.oTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.transform = "translateY(" + (currentY) + "px)";
         }
         //参数重置
         startY = 0;
@@ -143,15 +156,21 @@ function initLeft() {
         else if ((moveY + currentY) > 0) {
             currentY = 0;
             addTransition();
-            childDom.style.transform = "translateY(" + (currentY) + "px)";
             childDom.style.webkitTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.mozTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.oTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.msTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.transform = "translateY(" + (currentY) + "px)";
         }
         //上划过头就弹回
         else if ((moveY + currentY) < -(childH - parentH)) {
             currentY = -(childH - parentH);
             addTransition();
-            childDom.style.transform = "translateY(" + (currentY) + "px)";
             childDom.style.webkitTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.mozTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.oTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.msTransform = "translateY(" + (currentY) + "px)";
+            childDom.style.transform = "translateY(" + (currentY) + "px)";
         }
 
         endTime = new Date().getTime();//结束时间
@@ -188,19 +207,25 @@ function initLeft() {
             var top = $(target).index() * liH;
             if (top < (childH - parentH)) {
                 addTransition();
-                childDom.style.transform = "translateY(" + (-top) + "px)";
                 childDom.style.webkitTransform = "translateY(" + (-top) + "px)";
+                childDom.style.mozTransform = "translateY(" + (-top) + "px)";
+                childDom.style.msTransform = "translateY(" + (-top) + "px)";
+                childDom.style.oTransform = "translateY(" + (-top) + "px)";
+                childDom.style.transform = "translateY(" + (-top) + "px)";
                 //设置当前的translateY的值
                 currentY = -top;
             } else {
                 addTransition();
-                childDom.style.transform = "translateY(" + (-(childH - parentH)) + "px)";
                 childDom.style.webkitTransform = "translateY(" + (-(childH - parentH)) + "px)";
+                childDom.style.mozTransform = "translateY(" + (-(childH - parentH)) + "px)";
+                childDom.style.msTransform = "translateY(" + (-(childH - parentH)) + "px)";
+                childDom.style.oTransform = "translateY(" + (-(childH - parentH)) + "px)";
+                childDom.style.transform = "translateY(" + (-(childH - parentH)) + "px)";
                 //设置当前的translateY的值
                 currentY = -(childH - parentH);
             }
         }
-        
+
         //参数重置
         startY = 0;
         endY = 0;
@@ -232,12 +257,16 @@ function initRight() {
     //添加过渡动画
     function addTransition() {
         childDom.style.webkitTransition = 'all .3 ease 0';
+        childDom.style.mozTransition = 'all .3 ease 0';
+        childDom.style.oTransition = 'all .3 ease 0';
         childDom.style.transition = 'all .3 ease 0';
     }
 
     //删除过渡动画
     function removeTransition() {
         childDom.style.webkitTransition = 'all 0 ease 0';
+        childDom.style.mozTransition = 'all 0 ease 0';
+        childDom.style.oTransition = 'all 0 ease 0';
         childDom.style.transition = 'all 0 ease 0';
     }
 
@@ -258,6 +287,9 @@ function initRight() {
         if ((moveY + currentY) <= maxMoveY && (moveY + currentY) >= minMoveY) {
             removeTransition();
             childDom.style.webkitTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.mozTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.msTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.oTransform = "translateY(" + (moveY + currentY) + "px)";
             childDom.style.transform = "translateY(" + (moveY + currentY) + "px)";
         }
     }, false)
@@ -273,6 +305,9 @@ function initRight() {
             currentY = 0;
             addTransition();
             childDom.style.webkitTransform = "translateY(" + currentY + "px)"
+            childDom.style.mozTransform = "translateY(" + currentY + "px)"
+            childDom.style.msTransform = "translateY(" + currentY + "px)"
+            childDom.style.oTransform = "translateY(" + currentY + "px)"
             childDom.style.transform = "translateY(" + currentY + "px)"
         }
         // 上划过头弹回
@@ -280,6 +315,9 @@ function initRight() {
             currentY = -(childH - parent);
             addTransition();
             childDom.style.webkitTransform = "translateY(" + currentY + "px)";
+            childDom.style.mozTransform = "translateY(" + currentY + "px)";
+            childDom.style.msTransform = "translateY(" + currentY + "px)";
+            childDom.style.oTransform = "translateY(" + currentY + "px)";
             childDom.style.transform = "translateY(" + currentY + "px)";
         }
 
@@ -300,6 +338,9 @@ function initRight() {
             currentY = 0;
             addTransition();
             childDom.style.webkitTransform = "translateY(" + currentY + "px)"
+            childDom.style.mozTransform = "translateY(" + currentY + "px)"
+            childDom.style.msTransform = "translateY(" + currentY + "px)"
+            childDom.style.oTransform = "translateY(" + currentY + "px)"
             childDom.style.transform = "translateY(" + currentY + "px)"
         }
         // 上划过头弹回
@@ -311,6 +352,9 @@ function initRight() {
             }
             addTransition();
             childDom.style.webkitTransform = "translateY(" + currentY + "px)";
+            childDom.style.mozTransform = "translateY(" + currentY + "px)";
+            childDom.style.msTransform = "translateY(" + currentY + "px)";
+            childDom.style.oTransform = "translateY(" + currentY + "px)";
             childDom.style.transform = "translateY(" + currentY + "px)";
         }
 
