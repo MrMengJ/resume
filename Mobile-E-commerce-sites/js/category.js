@@ -32,6 +32,8 @@ function initLeft() {
     // 获取列表
     // var liDom =childDom.getElementsByTagName('li')[0];
     var liDom = $('.catLeft li');
+    //获取右边分类
+    var rightDom = document.getElementsByClassName('catRight')[0]
 
     //父元素容器的高
     var parentH = parentDom.offsetHeight;
@@ -153,13 +155,34 @@ function initLeft() {
         }
 
         endTime = new Date().getTime();//结束时间
+
         //点击效果
         if (moveY == 0 && (endTime - startTime) < 200) {
             var target = event.target.parentNode;
-            $(target).addClass('active').siblings().removeClass('active');
+
             var index = parseInt($(target).index());
-            $('.category .catRight .catRight_con').eq(index).addClass('active').siblings().removeClass('active');
+            var catRightPannel =  $('.category .catRight .catRight_con').eq(index);
+            catRightPannel.addClass('active').siblings().removeClass('active');
             initRight();
+            //点击才加载图片，不点击不加载，提升性能，优化体验
+            catRightPannel.find('img').each(function () {
+                $(this).attr('src',$(this).data('src'))
+            })
+
+            //模仿加载效果
+            //若点击已是active状态的列表按钮，则没有加载动画
+            if(!($(event.target).parent().hasClass('active'))){
+                rightDom.style.webkitTransition= "all 0.2s ease 0s";
+                rightDom.style.transition = "all 0.2s ease 0s";
+                rightDom.style.opacity = 0;
+                setTimeout(function(){
+                    rightDom.style.opacity = 1;
+                },300);
+            }
+
+            //最后才将点击的列别按钮设为“active”状态，因为前面模拟加载效果需要获取未改变active前的按钮是否“active”
+            $(target).addClass('active').siblings().removeClass('active');
+
             // 计算需要滑动的距离
             // var top target.index; //undefined  为什么？？
             var top = $(target).index() * liH;
@@ -175,9 +198,9 @@ function initLeft() {
                 childDom.style.webkitTransform = "translateY(" + (-(childH - parentH)) + "px)";
                 //设置当前的translateY的值
                 currentY = -(childH - parentH);
-
             }
         }
+        
         //参数重置
         startY = 0;
         endY = 0;
@@ -266,10 +289,8 @@ function initRight() {
         moveY = 0;
     }, false)
 
-
     //touchend
     childDom.addEventListener('touchend', function () {
-
         // 记录当前translateY值
         if ((moveY + currentY) <= 0 && (moveY + currentY) >= -(childH - parentH)) {
             currentY = moveY + currentY;
@@ -283,7 +304,11 @@ function initRight() {
         }
         // 上划过头弹回
         else if ((moveY + currentY) < -(childH - parentH)) {
-            currentY = -(childH - parentH);
+            if(childH < parentH){
+                currentY = 0;
+            }else{
+                currentY = -(childH - parentH);
+            }
             addTransition();
             childDom.style.webkitTransform = "translateY(" + currentY + "px)";
             childDom.style.transform = "translateY(" + currentY + "px)";
