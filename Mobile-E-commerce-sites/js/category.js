@@ -3,6 +3,7 @@ $(document).ready(function () {
     $('.category').height($('body').height() - $('header').height());
     // console.log($('.catleft').height()) //undefined  why??
     initLeft();
+    initRight();
 })
 
 // 改变窗口大小是重载页面
@@ -61,49 +62,64 @@ function initLeft() {
 
     //删除过渡动画
     function removeTransition() {
-        childDom.style.webkitTransition = 'translate 0 ease 0';
-        childDom.style.transition = 'translate 0 ease 0';
+        childDom.style.webkitTransition = 'all 0 ease 0';
+        childDom.style.transition = 'all 0 ease 0';
     }
 
     //touchstart(当手指接触屏幕的那一刻)
-    $(childDom).on('touchstart', function (event) {
+    childDom.addEventListener('touchstart', function (event) {
         // 获取开始时的Y坐标
-        startY = event.touches[0].clientY;//相对于父元素
+        startY = event.targetTouches[0].clientY;//相对于父元素
         // startY = event.originalEvent.touches[0].clientY;//originalEvent是jquery在构造一个jq版event对象后引用的原始对象
         //实测以上两种方法效果一样
         startTime = new Date().getTime();//获取开始时的时间
-    })
+    }, false);
 
     //touchmove(滑动屏幕)
-    $(childDom).on('touchmove', function (event) {
+    // $(childDom).on('touchmove', function (event) {
+    //     event.preventDefault();
+    //     // console.log("hello")
+    //     //获取结束时的Y坐标
+    //     endY = event.touches[0].clientY;
+    //     // console.log(endY)
+    //     moveY = endY - startY;
+    //     // 允许滑动的区间
+    //     if ((moveY + currentY) <= maxMoveY && (moveY + currentY) >= minMoveY) {
+    //         childDom.style.transform = "translateY(" + (moveY + currentY) + "px)";
+    //         childDom.style.webkitTransform = "translateY(" + (moveY + currentY) + "px)";
+    //     }
+    // })
+
+    childDom.addEventListener("touchmove", function (event) {
         event.preventDefault();
         // console.log("hello")
         //获取结束时的Y坐标
-        endY = event.touches[0].clientY;
+        endY = event.targetTouches[0].clientY;
         // console.log(endY)
         moveY = endY - startY;
         // 允许滑动的区间
-        if ((moveY - currentY) <= maxMoveY && (moveY - currentY) >= minMoveY) {
-            childDom.style.transform = "translateY(" + (moveY - currentY) + "px)";
-            childDom.style.webkitTransform = "translateY(" + (moveY - currentY) + "px)";
+        if ((moveY + currentY) <= maxMoveY && (moveY + currentY) >= minMoveY) {
+            removeTransition();
+            childDom.style.webkitTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.transform = "translateY(" + (moveY + currentY) + "px)";
         }
-    })
+    }, false)
 
-    //touchcancel(touch事件意外中断)
-    $(childDom).on('touchcancel', function () {
+    // touchcancel(touch事件意外中断)
+    childDom.addEventListener('touchcancel', function () {
         // 滑动结束后记录translateY的值
-        if ((moveY - currentY) <= 0 && (moveY - currentY) >= (childH - parentH)) {
-            currentY = moveY - currentY;
+        if ((moveY + currentY) <= 0 && (moveY + currentY) >= (childH - parentH)) {
+            currentY = moveY + currentY;
         }
-        //
-        else if ((moveY - currentY) > 0) {
+        //下划过头就弹回
+        else if ((moveY + currentY) > 0) {
             currentY = 0;
             addTransition();
             childDom.style.transform = "translateY(" + (currentY) + "px)";
             childDom.style.webkitTransform = "translateY(" + (currentY) + "px)";
         }
-        //
-        else if ((moveY - currentY) < (childH - parentH)) {
+        //上划过头就弹回
+        else if ((moveY + currentY) < -(childH - parentH)) {
             currentY = -(childH - parentH);
             addTransition();
             childDom.style.transform = "translateY(" + (currentY) + "px)";
@@ -113,23 +129,23 @@ function initLeft() {
         startY = 0;
         endY = 0;
         moveY = 0;
-    })
+    }, false)
 
     //touchend(手指离开屏幕时)
-    $(childDom).on('touchend', function () {
+    childDom.addEventListener('touchend', function () {
         // 滑动结束后记录translateY的值
-        if ((moveY - currentY) <= 0 && (moveY - currentY) >= -(childH - parentH)) {
-            currentY = moveY - currentY;
+        if ((moveY + currentY) <= 0 && (moveY + currentY) >= -(childH - parentH)) {
+            currentY = moveY + currentY;
         }
-        //
-        else if ((moveY - currentY) > 0) {
+        //下划过头接弹回
+        else if ((moveY + currentY) > 0) {
             currentY = 0;
             addTransition();
             childDom.style.transform = "translateY(" + (currentY) + "px)";
             childDom.style.webkitTransform = "translateY(" + (currentY) + "px)";
         }
-        //
-        else if ((moveY - currentY) < (childH-parentH)) {
+        //上划过头就弹回
+        else if ((moveY + currentY) < -(childH - parentH)) {
             currentY = -(childH - parentH);
             addTransition();
             childDom.style.transform = "translateY(" + (currentY) + "px)";
@@ -138,32 +154,144 @@ function initLeft() {
 
         endTime = new Date().getTime();//结束时间
         //点击效果
-        if(moveY ==0 && (endTime - startTime) < 200){
+        if (moveY == 0 && (endTime - startTime) < 200) {
             var target = event.target.parentNode;
             $(target).addClass('active').siblings().removeClass('active');
             var index = parseInt($(target).index());
             $('.category .catRight .catRight_con').eq(index).addClass('active').siblings().removeClass('active');
+            initRight();
             // 计算需要滑动的距离
             // var top target.index; //undefined  为什么？？
-            var top = $(target).index()*liH;
-            if (top < (childH - parentH)){
+            var top = $(target).index() * liH;
+            if (top < (childH - parentH)) {
                 addTransition();
-                childDom.style.transform = "translateY("+(-top)+"px)";
-                childDom.style.webkitTransform = "translateY("+(-top)+"px)";
+                childDom.style.transform = "translateY(" + (-top) + "px)";
+                childDom.style.webkitTransform = "translateY(" + (-top) + "px)";
                 //设置当前的translateY的值
                 currentY = -top;
-            }else{
+            } else {
                 addTransition();
-                childDom.style.transform = "translateY("+(-(childH - parentH))+"px)";
-                childDom.style.webkitTransform = "translateY("+(-(childH - parentH))+"px)";
+                childDom.style.transform = "translateY(" + (-(childH - parentH)) + "px)";
+                childDom.style.webkitTransform = "translateY(" + (-(childH - parentH)) + "px)";
                 //设置当前的translateY的值
                 currentY = -(childH - parentH);
+
             }
         }
-
         //参数重置
         startY = 0;
         endY = 0;
         moveY = 0;
-    })
+    }, false)
+}
+
+
+//右边分类交互
+function initRight() {
+    //获取父盒子
+    var parentDom = document.getElementsByClassName('catRight')[0];
+    //获取活动子盒子
+    var childDom = parentDom.getElementsByClassName('active')[0];
+    //父盒子高度
+    var parentH = parentDom.offsetHeight;
+    //子盒子高度
+    var childH = childDom.offsetHeight;
+
+    var startY = 0; //开始时Y坐标
+    var endY = 0; //结合苏时Y坐标
+    var moveY = 0; //手指滑动的距离
+    var currentY = 0; //当前的translateY值
+
+
+    var maxMoveY = 150;//限制最大的滑动距离
+    var minMoveY = -(childH - parentH + 150);//限制最小的滑动距离
+
+    //添加过渡动画
+    function addTransition() {
+        childDom.style.webkitTransition = 'all .3 ease 0';
+        childDom.style.transition = 'all .3 ease 0';
+    }
+
+    //删除过渡动画
+    function removeTransition() {
+        childDom.style.webkitTransition = 'all 0 ease 0';
+        childDom.style.transition = 'all 0 ease 0';
+    }
+
+    //touchstart
+    childDom.addEventListener('touchstart', function (event) {
+        //获取开始时的Y坐标
+        startY = event.touches[0].clientY;
+
+    }, false);
+
+    //touchmove
+    childDom.addEventListener('touchmove', function (event) {
+        event.preventDefault();
+        //获取结束时的Y坐标
+        endY = event.touches[0].clientY;
+        //手指滑动的距离
+        moveY = endY - startY;
+        if ((moveY + currentY) <= maxMoveY && (moveY + currentY) >= minMoveY) {
+            removeTransition();
+            childDom.style.webkitTransform = "translateY(" + (moveY + currentY) + "px)";
+            childDom.style.transform = "translateY(" + (moveY + currentY) + "px)";
+        }
+    }, false)
+
+    //touchcannel
+    childDom.addEventListener('touchcannel', function () {
+        // 记录当前translateY值
+        if ((moveY + currentY) <= 0 && (moveY + currentY) >= -(childH - parentH)) {
+            currentY = moveY + currentY;
+        }
+        // 下划过头弹回
+        else if ((moveY + currentY) > 0) {
+            currentY = 0;
+            addTransition();
+            childDom.style.webkitTransform = "translateY(" + currentY + "px)"
+            childDom.style.transform = "translateY(" + currentY + "px)"
+        }
+        // 上划过头弹回
+        else if ((moveY + currentY) < -(childH - parentH)) {
+            currentY = -(childH - parent);
+            addTransition();
+            childDom.style.webkitTransform = "translateY(" + currentY + "px)";
+            childDom.style.transform = "translateY(" + currentY + "px)";
+        }
+
+        //重置数据
+        startY = 0;
+        endY = 0;
+        moveY = 0;
+    }, false)
+
+
+    //touchend
+    childDom.addEventListener('touchend', function () {
+
+        // 记录当前translateY值
+        if ((moveY + currentY) <= 0 && (moveY + currentY) >= -(childH - parentH)) {
+            currentY = moveY + currentY;
+        }
+        // 下划过头弹回
+        else if ((moveY + currentY) > 0) {
+            currentY = 0;
+            addTransition();
+            childDom.style.webkitTransform = "translateY(" + currentY + "px)"
+            childDom.style.transform = "translateY(" + currentY + "px)"
+        }
+        // 上划过头弹回
+        else if ((moveY + currentY) < -(childH - parentH)) {
+            currentY = -(childH - parentH);
+            addTransition();
+            childDom.style.webkitTransform = "translateY(" + currentY + "px)";
+            childDom.style.transform = "translateY(" + currentY + "px)";
+        }
+
+        //重置数据
+        startY = 0;
+        endY = 0;
+        moveY = 0;
+    }, false)
 }
