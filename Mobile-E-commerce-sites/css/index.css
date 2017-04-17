@@ -299,10 +299,10 @@ body{
     line-height: 32px;
     margin-right: 10px;
 }
-/*三个商品*/
+/*商品*/
 .secondKill .product_bot{
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     /*font-size:0;*/
     /*position: relative;*/
 }
@@ -315,7 +315,7 @@ body{
     padding: 10px 0;
 }
 .secondKill .product_bot ul li{
-    /*width: 33.333%;*/
+    /*width: 30%;*/
     float: left;
 }
 .secondKill .product_bot ul li a{
@@ -348,6 +348,29 @@ body{
     text-align: center;
     color: #888;
 }
+
+
+.secondKill .product_bot ul > a{
+    float: left;
+    text-align: center;
+    display: block;
+    width:18px;
+    font-size: 10px;
+}
+.secondKill .product_bot ul > a .seckill-all{
+    width:22px;
+    padding:5px;
+    background: #f5f5f5;
+}
+.secondKill .product_bot ul > a .seckill-all .show-all-icon{
+    display: block;
+    width:12px;
+    height: 12px;
+    background: url("../img/jd-sprites02.png") no-repeat -107px -109px;
+    -webkit-background-size:200px 200px;
+    background-size:200px 200px;
+}
+
 /*超值购*/
 .product .pd .product_bot{
     width: 100%;
