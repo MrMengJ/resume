@@ -207,7 +207,7 @@ function initLeft() {
             $(target).addClass('active').siblings().removeClass('active');
 
             // 计算需要滑动的距离
-            // var top target.index; //undefined  为什么？？
+            // var top = target.index; //undefined  为什么？？
             var top = $(target).index() * liH;
             if (top < (childH - parentH)) {
                 addTransition();
