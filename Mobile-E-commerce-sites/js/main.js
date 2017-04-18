@@ -144,6 +144,7 @@ function productMove() {
     // 限制最大、最小滑动距离
     var minMoveX = -childW;
     var maxMoveX = 0;
+
     //touchstart 手指接触屏幕
     childDom.addEventListener('touchstart',function(event){
         startX = event.touches[0].clientX;//获取开始时的X坐标

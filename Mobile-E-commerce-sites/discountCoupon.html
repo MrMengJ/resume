@@ -8,64 +8,151 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/discountCoupon.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/discountCoupon.js"></script>
 </head>
 <body>
 <!--外部自适应容器-->
 <div class="layout">
-    <!--头部  开始-->
-    <header class="header">
-        <div class="topBar">
-            <div class="icon_back" onclick="history.go(-1)"></div>
-            <div class="lqzx">
-                <span>领券中心</span>
+    <div class="fixed-wrap">
+        <div class="wrap">
+            <!--头部  开始-->
+            <header class="header">
+                <div class="topBar">
+                    <div class="icon_back" onclick="history.go(-1)"></div>
+                    <div class="lqzx">
+                        <span>领券中心</span>
+                    </div>
+                    <div class="icon_menu"></div>
+                </div>
+                <div class="header_bar">
+                    <ul class="clearfix">
+                        <li><a href="index.html">
+                            <span></span>
+                            <strong>首页</strong>
+                        </a></li>
+                        <li><a href="category.html">
+                            <span></span>
+                            <strong>分类搜索</strong>
+                        </a></li>
+                        <li><a href="shopCar.html">
+                            <span></span>
+                            <strong>购物车</strong>
+                        </a></li>
+                        <li><a href="personCenter.html">
+                            <span></span>
+                            <strong>个人中心</strong>
+                        </a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--选择栏-->
+            <div class="bar">
+                <div class="bar_left">
+                    <ul class="clearfix">
+                        <li><span class="active">精选</span></li>
+                        <li><span>今日必买</span></li>
+                        <li><span>手机数码</span></li>
+                        <li><span>服饰内衣</span></li>
+                        <li><span>食品饮料</span></li>
+                        <li><span>运动中心</span></li>
+                        <li><span>家用电器</span></li>
+                        <li><span>电脑办公</span></li>
+                        <li><span>图像影音</span></li>
+                        <li><span>鞋靴箱包</span></li>
+                        <li><span>汽车用品</span></li>
+                        <li><span>家居家纺</span></li>
+                    </ul>
+                </div>
+                <div class="bar_right">
+                    <em>
+                        <img src="img/icon-btn-roll.png" alt="">
+                    </em>
+                </div>
             </div>
-            <div class="icon_menu"></div>
-        </div>
-        <div class="header_bar">
-            <ul class="clearfix">
-                <li><a href="index.html">
-                    <span></span>
-                    <strong>首页</strong>
-                </a></li>
-                <li><a href="category.html">
-                    <span></span>
-                    <strong>分类搜索</strong>
-                </a></li>
-                <li><a href="shopCar.html">
-                    <span></span>
-                    <strong>购物车</strong>
-                </a></li>
-                <li><a href="personCenter.html">
-                    <span></span>
-                    <strong>个人中心</strong>
-                </a></li>
-            </ul>
-        </div>
-    </header>
-    <!--选择栏-->
-    <div class="bar">
-        <div class="bar_left">
-            <ul class="clearfix">
-                <li><span class="active">精选</span></li>
-                <li><span>今日必买</span></li>
-                <li><span>手机数码</span></li>
-                <li><span>服饰内衣</span></li>
-                <li><span>食品饮料</span></li>
-                <li><span>运动中心</span></li>
-                <li><span>家用电器</span></li>
-                <li><span>电脑办公</span></li>
-                <li><span>图像影音</span></li>
-                <li><span>鞋靴箱包</span></li>
-                <li><span>汽车用品</span></li>
-                <li><span>家居家纺</span></li>
-            </ul>
-        </div>
-        <div class="bar_right">
-            <em>
-                <img src="img/icon-btn-roll.png" alt="">
-            </em>
+            <div class="all-category-wrap">
+                <div class="all-category">
+                    <ul class="clearfix">
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            今日必买
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+                        <li>
+                        <span>
+                            <i></i>
+                            精选
+                        </span>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="shade"></div>
     <!--优惠券-->
     <section class="yhq">
         <div class="container">
@@ -3299,7 +3386,5 @@
     </section>
 </div>
 
-<script src="js/jquery.js"></script>
-<script src="js/discountCoupon.js"></script>
 </body>
 </html>

@@ -2,6 +2,10 @@ $(document).ready(function () {
     //控制category高度
     $('.category').height($('body').height() - $('header').height());
     // console.log($('.catleft').height()) //undefined  why??
+    // 切换默认的隐藏的导航栏显示状态
+    $('.icon_menu').on('click',function () {
+        $('.header_bar').toggle();
+    })
     initLeft();
     initRight();
 })
@@ -18,9 +22,8 @@ window.onresize = function () {
 //     $('.category .catRight .catRight_con').eq(index).addClass('active').siblings().removeClass('active');
 // })
 //
-// $('.icon_menu').click(function () {
-//     $('.header_bar').toggle();
-// })
+
+
 
 //carLeft 左侧分类交互
 function initLeft() {
@@ -58,19 +61,20 @@ function initLeft() {
 
     //添加过渡动画
     function addTransition() {
-        childDom.style.webkitTransition = 'all .3 ease 0';
-        childDom.style.mozitTransition = 'all .3 ease 0';
-        childDom.style.oTransition = 'all .3 ease 0';
-        childDom.style.transition = 'all .3 ease 0';
+        childDom.style.webkitTransition = 'all .3s ease 0s';
+        childDom.style.mozTransition = 'all .3s ease 0s';
+        childDom.style.oTransition = 'all .3s ease 0s';
+        childDom.style.transition = 'all .3s ease 0s';
     }
 
     //删除过渡动画
     function removeTransition() {
-        childDom.style.webkitTransition = 'all 0 ease 0';
-        childDom.style.mozTransition = 'all 0 ease 0';
-        childDom.style.oTransition = 'all 0 ease 0';
-        childDom.style.transition = 'all 0 ease 0';
+        childDom.style.webkitTransition = 'all 0s ease 0s';
+        childDom.style.mozTransition = 'all 0s ease 0s';
+        childDom.style.oTransition = 'all 0s ease 0s';
+        childDom.style.transition = 'all 0s ease 0s';
     }
+
 
     //touchstart(当手指接触屏幕的那一刻)
     childDom.addEventListener('touchstart', function (event) {
@@ -312,7 +316,7 @@ function initRight() {
         }
         // 上划过头弹回
         else if ((moveY + currentY) < -(childH - parentH)) {
-            currentY = -(childH - parent);
+            currentY = -(childH - parentH);
             addTransition();
             childDom.style.webkitTransform = "translateY(" + currentY + "px)";
             childDom.style.mozTransform = "translateY(" + currentY + "px)";
