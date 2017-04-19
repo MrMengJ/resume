@@ -25,9 +25,9 @@ body {
     background: #f3f5f7;
 }
 
-.layout{
-    overflow: hidden;
-}
+/*.layout{*/
+    /*overflow: hidden;*/
+/*}*/
 
 /*固定定位包裹层*/
 .fixed-wrap{
@@ -218,7 +218,7 @@ body {
 
 .yhq .contaier {
     width: 100%;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .yhq .container ul {
