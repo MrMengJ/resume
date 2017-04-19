@@ -22,9 +22,9 @@ $(document).ready(function () {
 })
 
 // 改变窗口大小是重载页面
-window.onresize = function () {
-    location.reload(true);
-}
+// window.onresize = function () {
+//     location.reload(true);
+// }
 
 
 // // 选择栏切换效果
