@@ -14,13 +14,17 @@ $(document).ready(function () {
     // $(".all-category-wrap").height(0);
     $(".yhq").css('padding-top',$('.fixed-wrap').height())
 
-    $('.layout').height($(window).height())
-    console.log($('.layout').height())
+
     categoryMove();
     toggle_category();
     show_category();
     all_category()
 })
+
+// 改变窗口大小是重载页面
+window.onresize = function () {
+    location.reload(true);
+}
 
 
 // // 选择栏切换效果
