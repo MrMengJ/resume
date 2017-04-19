@@ -43,6 +43,7 @@ body {
 /*头部开始*/
 .header {
     width: 100%;
+    margin-bottom: -1px;
 }
 .header .header-wrap{
     min-width: 300px;
@@ -145,7 +146,6 @@ body {
     /*margin:0 auto;*/
 }
 
-
 .all-category-wrap .all-category {
     background: #fff;
     /*-webkit-transform: translateY(-300px);*/
@@ -161,7 +161,9 @@ body {
     /*!*-o-transform: translateY(0px);*!*/
     /*!*transform: translateY(0px);*!*/
 /*}*/
-
+.all-category-wrap .all-category.active{
+    border-top: 1px solid #ececec;
+}
 .all-category ul {
     padding: 5px 0 20px;
 }
@@ -205,7 +207,6 @@ body {
     max-width: 640px;
     position: fixed;
     background: rgba(0,0,0,.6);
-
     width:100%;
     z-index: 99;
 }

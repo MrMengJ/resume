@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    var currentX ;//当前translateX值
+})
+
+$(document).ready(function () {
     // 切换默认的隐藏的导航栏显示状态
     $('.icon_menu').on('click',function () {
         $('.header_bar').toggle();
@@ -14,7 +18,7 @@ $(document).ready(function () {
     // $(".all-category-wrap").height(0);
     $(".yhq").css('padding-top',$('.fixed-wrap').height())
 
-
+   ;
     categoryMove();
     toggle_category();
     show_category();
@@ -72,7 +76,7 @@ function categoryMove() {
     var startX = 0;//开始时的X坐标
     var endX = 0; //结束时的X坐标
     var moveX = 0;//手指滑动的距离
-    var currentX = 0;//当前translateX值
+    currentX = 0;
 
     var startTime = 0;//开始时的时间
     var endTime = 0;//结束时的时间
@@ -108,8 +112,8 @@ function categoryMove() {
         event.preventDefault();
         endX = event.touches[0].clientX; //获取结束时的X坐标
         moveX = endX - startX;
-        console.log("move前currentX:"+currentX)
-        console.log("currentX+moveX:"+currentX+moveX)
+        // console.log("move前currentX:"+currentX)
+        // console.log("currentX+moveX:"+currentX+moveX)
         if ((currentX+moveX) <= maxMoveX && (currentX+moveX) >= minMoveX){
             childDom.style.webkitTransform = "translateX("+(currentX+moveX)+"px)";
             childDom.style.mozTransform = "translateX("+(currentX+moveX)+"px)";
@@ -117,7 +121,7 @@ function categoryMove() {
             childDom.style.msTransform = "translateX("+(currentX+moveX)+"px)";
             childDom.style.Transform = "translateX("+(currentX+moveX)+"px)";
         }
-        console.log("move后currentX:"+currentX)
+        // console.log("move后currentX:"+currentX)
     },false)
 
     //touchcannel touch事件意外中断
@@ -141,7 +145,7 @@ function categoryMove() {
             // console.log(currentX)
         }
 
-        console.log("touchend后currentX："+currentX)
+        // console.log("touchend后currentX："+currentX)
         endTime  = new Date().getTime();
 
         //点击效果
@@ -159,6 +163,9 @@ function categoryMove() {
                 $(target).children().addClass('active').parent().siblings().children().removeClass('active')
             }
 
+            //遮罩高度为0
+            $('.shade').height(0);
+
             //获取当前li为第几个
             var index = parseInt($(target).index());
             //计算滑动的距离
@@ -174,7 +181,7 @@ function categoryMove() {
                 childDom.style.Transform = "translateX("+(-left)+"px)";
                 //设置当前的translateX的值
                 currentX = -left;
-                console.log("点击1后current:"+currentX);
+                // console.log("点击1后current:"+currentX);
             }else{
                 childDom.style.webkitTransform = "translateX("+(-(childW - parentW))+"px)";
                 childDom.style.mozTransform = "translateX("+(-(childW - parentW))+"px)";
@@ -183,9 +190,14 @@ function categoryMove() {
                 childDom.style.Transform = "translateX("+(-(childW - parentW))+"px)";
 
                 //设置当前的translateX的值
-                currentX = -(childW - remainder);
-                console.log("点击2后current:"+currentX);
+                currentX = -(childW - parentW);
+                // console.log("点击2后current:"+currentX);
             }
+
+            //all-category相应状态改变
+            $(".all-category li").eq(index).children('span').addClass('active').parent().siblings().children('span').removeClass('active')
+            $(".all-category-wrap").hide(300);
+
 
             //模拟加载效果
             yhqDom[0].style.webkitTransition= "all 0.2s ease 0s";
@@ -204,9 +216,11 @@ function categoryMove() {
             // 以上两个有的话，fixed-wrap的宽度会变为640,原因不明，所以先暂时加了下面的代码
             //设置fixed-wrap wrap的宽度为body的宽度
             $('.fixed-wrap .wrap').width(document.body.clientWidth);
+
+
         }
 
-        console.log("end后currentX："+currentX)
+        // console.log("end后currentX："+currentX)
         //重置数据
         startX = 0;
         endX = 0;
@@ -285,6 +299,7 @@ function show_category(){
 function all_category() {
     $('.all-category li').on('click',function(){
         $(this).children('span').addClass('active').parent().siblings().children('span').removeClass('active');
+        $(".all-category").removeClass('active')
         $(".all-category-wrap").hide(300);
         $('.shade').height(0);
         var index = $(this).index();
@@ -314,7 +329,7 @@ function all_category() {
         var startX = 0;//开始时的X坐标
         var endX = 0; //结束时的X坐标
         var moveX = 0;//手指滑动的距离
-        var currentX = 0;//当前translateX值
+        currentX = 0;
 
         var startTime = 0;//开始时的时间
         var endTime = 0;//结束时的时间
@@ -354,15 +369,15 @@ function all_category() {
             currentX = -left;
             // console.log("点击1后current:"+currentX);
         }else{
-            childDom.style.webkitTransform = "translateX("+(-(childW - remainder))+"px)";
-            childDom.style.mozTransform = "translateX("+(-(childW - remainder))+"px)";
-            childDom.style.msTransform = "translateX("+(-(childW - remainder))+"px)";
-            childDom.style.oTransform = "translateX("+(-(childW - remainder))+"px)";
-            childDom.style.Transform = "translateX("+(-(childW - remainder))+"px)";
+            childDom.style.webkitTransform = "translateX("+(-(childW - parentW))+"px)";
+            childDom.style.mozTransform = "translateX("+(-(childW - parentW))+"px)";
+            childDom.style.msTransform = "translateX("+(-(childW - parentW))+"px)";
+            childDom.style.oTransform = "translateX("+(-(childW - parentW))+"px)";
+            childDom.style.Transform = "translateX("+(-(childW - parentW))+"px)";
 
             //设置当前的translateX的值
-            currentX = -(childW - remainder);
-            console.log("点击2后current:"+currentX);
+            currentX = -(childW - parentW);
+            // console.log("点击2后current:"+currentX);
         }
         //模拟加载效果
         yhqDom[0].style.webkitTransition= "all 0.2s ease 0s";
