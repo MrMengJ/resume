@@ -126,19 +126,7 @@ function categoryMove() {
         if((currentX+moveX) >= minMoveX && (currentX+moveX) <= maxMoveX){
             currentX = moveX + currentX;
         }
-        // else if((currentX+moveX) > maxMoveX){
-        //     childDom.style.webkitTransform = "translateX("+0+"px)";
-        //     childDom.style.mozTransform = "translateX("+0+"px)";
-        //     childDom.style.msTransform = "translateX("+0+"px)";
-        //     childDom.style.oTransform = "translateX("+0+"px)";
-        //     childDom.style.transform = "translateX("+0+"px)";
-        // }else if((currentX+moveX) < minMoveX){
-        //     childDom.style.webkitTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.mozTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.msTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.oTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.transform = "translateX("+(-(childW - parentW))+"px)";
-        // }
+
         //重置数据
         startX = 0;
         endX = 0;
@@ -152,19 +140,7 @@ function categoryMove() {
             currentX = moveX + currentX;
             // console.log(currentX)
         }
-        // else if((currentX+moveX) > maxMoveX){
-        //     childDom.style.webkitTransform = "translateX("+0+"px)";
-        //     childDom.style.mozTransform = "translateX("+0+"px)";
-        //     childDom.style.msTransform = "translateX("+0+"px)";
-        //     childDom.style.oTransform = "translateX("+0+"px)";
-        //     childDom.style.transform = "translateX("+0+"px)";
-        // }else if((currentX+moveX) < minMoveX){
-        //     childDom.style.webkitTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.mozTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.msTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.oTransform = "translateX("+(-(childW - parentW))+"px)";
-        //     childDom.style.transform = "translateX("+(-(childW - parentW))+"px)";
-        // }
+
         console.log("touchend后currentX："+currentX)
         endTime  = new Date().getTime();
 
@@ -200,11 +176,11 @@ function categoryMove() {
                 currentX = -left;
                 console.log("点击1后current:"+currentX);
             }else{
-                childDom.style.webkitTransform = "translateX("+(-(childW - remainder))+"px)";
-                childDom.style.mozTransform = "translateX("+(-(childW - remainder))+"px)";
-                childDom.style.msTransform = "translateX("+(-(childW - remainder))+"px)";
-                childDom.style.oTransform = "translateX("+(-(childW - remainder))+"px)";
-                childDom.style.Transform = "translateX("+(-(childW - remainder))+"px)";
+                childDom.style.webkitTransform = "translateX("+(-(childW - parentW))+"px)";
+                childDom.style.mozTransform = "translateX("+(-(childW - parentW))+"px)";
+                childDom.style.msTransform = "translateX("+(-(childW - parentW))+"px)";
+                childDom.style.oTransform = "translateX("+(-(childW - parentW))+"px)";
+                childDom.style.Transform = "translateX("+(-(childW - parentW))+"px)";
 
                 //设置当前的translateX的值
                 currentX = -(childW - remainder);
