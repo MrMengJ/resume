@@ -76,7 +76,7 @@ function categoryMove() {
     var startX = 0;//开始时的X坐标
     var endX = 0; //结束时的X坐标
     var moveX = 0;//手指滑动的距离
-    currentX = 0;
+    currentX = 0;//当前translateY的值
 
     var startTime = 0;//开始时的时间
     var endTime = 0;//结束时的时间
@@ -326,16 +326,8 @@ function all_category() {
         $(childDom).width(productWidth);//有效  这是为何？？
         var childW = childDom.offsetWidth;
 
-        var startX = 0;//开始时的X坐标
-        var endX = 0; //结束时的X坐标
-        var moveX = 0;//手指滑动的距离
-        currentX = 0;
+        currentX = 0;//当前translateY的值
 
-        var startTime = 0;//开始时的时间
-        var endTime = 0;//结束时的时间
-        // 限制最大、最小滑动距离
-        var minMoveX = -(childW - parentW);
-        var maxMoveX = 0;
 
         //添加过渡动画
         function addTransition() {

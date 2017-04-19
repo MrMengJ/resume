@@ -404,6 +404,12 @@ body{
 }
 
 
+/*底部预留空间*/
+.isimeli{
+    width: 100%;
+    height: 54px;
+
+}
 /*固定底部通栏*/
 #footBar{
     width:100%;

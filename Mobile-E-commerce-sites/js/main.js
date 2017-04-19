@@ -1,13 +1,14 @@
 $(document).ready(function () {
     search();
-    bannerMove()
+    bannerAutomaticMove();
     secondKill();
     productMove();
 })
 
 
+
 //轮播图自动播放
-function bannerMove() {
+function bannerAutomaticMove() {
     var banner = $(".banner"),  //获取最外层框架的名称
         ul = banner.find("ul"),
         showNumber = banner.find(".showNav li"),//获取按钮
