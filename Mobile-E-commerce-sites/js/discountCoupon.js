@@ -14,7 +14,8 @@ $(document).ready(function () {
     // $(".all-category-wrap").height(0);
     $(".yhq").css('padding-top',$('.fixed-wrap').height())
 
-
+    $('.layout').height($(window).height())
+    console.log($('.layout').height())
     categoryMove();
     toggle_category();
     show_category();
