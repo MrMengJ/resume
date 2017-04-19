@@ -5,7 +5,7 @@ $(document).ready(function () {
         $(".yhq").css('padding-top',$('.fixed-wrap').height())
     })
     //页面加载设置fixed-wrap.wrap的宽度
-    $('.fixed-wrap .wrap').width($(window).width());
+    $('.fixed-wrap .wrap').width(document.body.clientWidth);
     //领取优惠券
     $('.yhq .content_rf_box1').on('click',function () {
         $(this).css('display','none').siblings().css('display','block');
@@ -226,8 +226,8 @@ function categoryMove() {
             })
             yhqPannel.addClass('active').siblings().removeClass('active');
             // 以上两个有的话，fixed-wrap的宽度会变为640,原因不明，所以先暂时加了下面的代码
-            //设置fixed-wrap wrap的宽度为窗口的宽度
-            $('.fixed-wrap .wrap').width($(window).width());
+            //设置fixed-wrap wrap的宽度为body的宽度
+            $('.fixed-wrap .wrap').width(document.body.clientWidth);
         }
 
         console.log("end后currentX："+currentX)
@@ -268,7 +268,7 @@ function toggle_category() {
 
         }else{
             all_category.addClass('active')
-            $('.shade').height($(window).height());
+            $('.shade').height(document.body.clientHeight);
             $(".all-category-wrap").show(300)
 
         }
