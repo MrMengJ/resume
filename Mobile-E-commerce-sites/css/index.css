@@ -117,7 +117,7 @@ body{
 .banner ul{
     width: 1000%;
     /*ul设置relative是为了让轮播图自动播放，通过ul不同的left值来实现*/
-    position: relative;
+    /*position: relative;*/
 }
 .banner ul li{
     width: 10%;

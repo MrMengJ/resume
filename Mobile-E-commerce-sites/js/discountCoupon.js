@@ -235,9 +235,9 @@ function toggle_category() {
         var all_categoryH = all_category.height();
         // //添加过渡动画
         // function addTransition() {
-        //     all_category[0].style.webkitTransition = 'all .3s ease0s';
-        //     all_category[0].style.mozTransition = 'all .3s ease0s';
-        //     all_category[0].style.oTransition = 'all .3s ease0s';
+        //     all_category[0].style.webkitTransition = 'all .3s ease 0s';
+        //     all_category[0].style.mozTransition = 'all .3s ease 0s';
+        //     all_category[0].style.oTransition = 'all .3s ease 0s';
         //     all_category[0].style.transition = 'all .3s ease 0s';
         // }
         // //删除过渡动画
