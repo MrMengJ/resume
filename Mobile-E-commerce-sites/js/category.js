@@ -181,6 +181,16 @@ function initLeft() {
 
         //点击效果
         if (moveY == 0 && (endTime - startTime) < 200) {
+            //模仿加载效果
+            //若点击已是active状态的列表按钮，则没有加载动画
+            if(!($(event.target).parent().hasClass('active'))){
+                rightDom.style.webkitTransition= "all 0.8s ease 0s";
+                rightDom.style.transition = "all 0.8s ease 0s";
+                rightDom.style.opacity = 0;
+                setTimeout(function(){
+                    rightDom.style.opacity = 1;
+                },300);
+            }
             var target = event.target.parentNode;
 
             var index = parseInt($(target).index());
@@ -195,8 +205,8 @@ function initLeft() {
             //模仿加载效果
             //若点击已是active状态的列表按钮，则没有加载动画
             if(!($(event.target).parent().hasClass('active'))){
-                rightDom.style.webkitTransition= "all 0.2s ease 0s";
-                rightDom.style.transition = "all 0.2s ease 0s";
+                rightDom.style.webkitTransition= "all 0.8s ease 0s";
+                rightDom.style.transition = "all 0.8s ease 0s";
                 rightDom.style.opacity = 0;
                 setTimeout(function(){
                     rightDom.style.opacity = 1;
