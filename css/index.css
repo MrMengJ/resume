@@ -1,6 +1,7 @@
 /*公共部分*/
 
 body {
+    width:100%;
     font-family: 'Open Sans', Helvetica, arial, sans-serif;
     color: #f5f5f5;
     letter-spacing: 1px;
