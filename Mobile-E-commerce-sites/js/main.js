@@ -9,6 +9,13 @@ $(function () {
     automateBanner = play(nextImg, 3000);
     //轮播图触摸事件
     bannerTouch();
+    //页面加载完毕1秒钟后才加载轮播图未加载的图片
+    setTimeout(function () {
+        liDom.eq(imgIndex).siblings().find('img').each(function () {
+            $(this).attr('src',$(this).data('src'))
+        })
+    },1000)
+
 })
 
 $(window).resize(function(){
@@ -314,6 +321,23 @@ function bannerTouch() {
         // 滑动过程中关闭定时器，暂停自动轮播
         stop(automateBanner);
     })
+
+    //touchcannel
+    liDom.on('touchcannel',function () {
+        if (moveX > maxX){
+            lastImg();
+        }
+        else if(moveX < minX){
+            nextImg();
+        }
+        // 如果滑动距离不够,图片回弹
+        else {
+            liDom[imgIndex].style.webkitTransform = "translateX(0)";
+        }
+        // 手指离开后，打开定时器，开始自动轮播
+        automateBanner = play(nextImg,3000)
+    })
+
 
     //touchend
     liDom.on('touchend',function () {
