@@ -16,9 +16,9 @@ $(document).ready(function () {
     })
 
     // $(".all-category-wrap").height(0);
-    $(".yhq").css('padding-top',$('.fixed-wrap').height())
+    $(".yhq").css('padding-top',$('.fixed-wrap').height());
 
-   ;
+
     categoryMove();
     toggle_category();
     show_category();
@@ -229,8 +229,18 @@ function categoryMove() {
 }
 
 //点击右边三角按钮显示/隐藏all-category-wrap
+var angle = 0;
 function toggle_category() {
     $(".bar_right").on('click',function () {
+        angle += 180;
+        $(this).find('img').css({
+            webkitTransform: "rotate(" + angle + "deg)",
+            mozTransform: "rotate(" + angle + "deg)",
+            msTransform: "rotate(" + angle + "deg)",
+            oTransform: "rotate(" + angle + "deg)",
+            transform: "rotate(" + angle + "deg)",
+        })
+
         var all_category =  $(".all-category");
         var all_categoryH = all_category.height();
         // //添加过渡动画

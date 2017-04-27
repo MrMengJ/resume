@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <title>MrMengJ</title>
     <link rel="stylesheet" type="text/css" href="css/Normalize.css">
-    <link rel="stylesheet" type="text/css" href="lib/Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--[if lt IE 9]>
     <script src="lib/html5shiv/html5shiv.min.js"></script>
@@ -14,33 +14,212 @@
     <![endif]-->
 </head>
 
+
 <body>
-<h1>Welcome to my homepage！</h1>
-<h4>By: Mr MengJ</h4>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="Mobile-E-commerce-sites" class="btn-0">移动端电商</a>
+<!--首屏欢迎页-->
+<section id="first-page" class="welcome">
+    <p class="greet">欢迎你的光临</p>
+    <a class="next-page" href="#nav-page">
+        <img src="img/next-page.png" alt="">
+    </a>
+</section>
+<!--导航栏-->
+<nav id="nav-page">
+    <nav class="navbar navbar-me">
+        <div class="container">
+            <!--商标-->
+            <div class="navbar-header">
+                <!--菜单变换-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list"
+                        aria-expanded="false">
+                    <span class="sr-only">菜单切换</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#first-page">
+                    MrmengJ
+                </a>
+            </div>
+            <!--导航列表-->
+            <div class="collapse navbar-collapse" id="navbar-list">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#intro-page">个人简介</a></li>
+                    <li><a href="#skills-page">专业技能</a></li>
+                    <li><a href="#work-experience-page">工作经历</a></li>
+                    <li><a href="#project-page">项目作品</a></li>
+                    <li><a href="#contact-me-page">联系方式</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="beautiful/button%20hover" class="btn-1">hover动画</a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="" class="btn-2">hello world!</a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="" class="btn-3">hello world!</a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="" class="btn-4">hello world!</a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="" class="btn-5">hello world!</a>
-        </div>
-        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-            <a href="" class="btn-6">hello world!</a>
+    </nav>
+</nav>
+<!--个人简介-->
+<section id="intro-page">
+    <div class="intro-icon">
+        <img class="head-portrait" src="img/about-me.jpg" alt="My head portrait">
+    </div>
+    <div class="describe">
+        <div class="container">
+            <div class="row">
+                <div class="infor col-lg-6 col-md-6 col-sm-6">
+                    <ul>
+                        <li><span>⭐ </span>姓名：孟津/MrMengJ</li>
+                        <li><span>⭐ </span>年龄：22</li>
+                        <li><span>⭐ </span>手机：18163912622</li>
+                        <li><span>⭐ </span>邮箱：18163912622@163.com</li>
+                        <li><span>⭐ </span>Github: <a href="https://github.com/MrMengJ" target="_blank">点击进入</a></li>
+                    </ul>
+                </div>
+                <div class="character col-lg-6 col-md-6 col-sm-6">
+                    <p>
+                        <span>⭐ </span>我是一个热爱团体、做事认真的人。<br/>
+                        <span>⭐ </span>我是一个热爱技术、喜欢钻研的人。<br/>
+                        <span>⭐ </span>自学能力不错，能及时总结经验。
+                    </p>
+                    <br/>
+                    <p>
+                        <span>⭐ </span>我大学读的是 “信息与计算科学” 专业，有专业知识体系做基础。大学期间努力学习，努力提升自己的能力。<br/>
+                        <span>⭐ </span>半年前端开发经验，熟悉HTML(5)、CSS(3)、JavaScript，熟练使用Jquery框架，能完成大多数页面布局，能开发符合W3C标准的页面，能手写常见交互。
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!--专业技能-->
+<section id="skills-page">
+    <div class="container">
+        <div class="skills-title">
+            <h2>专业技能</h2>
+        </div>
+        <div class="skills-wrap">
+            <div class="skills-category">
+                <div class="skills-list row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul>
+                                <li>语言</li>
+                                <li>HTML(5)</li>
+                                <li>CSS(3)</li>
+                                <li>Javascript</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul>
+                                <li>技术</li>
+                                <li>Ajax</li>
+                                <li>JSON</li>
+                                <li>PS WebStorm</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul>
+                                <li>思想</li>
+                                <li>W3C标准</li>
+                                <li>语义化</li>
+                                <li>结构样式分离</li>
+                                <li>模块化</li>
+                                <li>组件化</li>
+                                <li>解耦合</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul>
+                                <li>框架</li>
+                                <li>Jquery</li>
+                                <li>Bootstrap</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-level">
+                <div class="wrap">
+                    <ul class="skills-list">
+                        <li>
+                            <h4>HTML(5)</h4>
+                        </li>
+                        <li>
+                            <h4>CSS(3)</h4>
+                        </li>
+                        <li>
+                            <h4>Javascript</h4>
+                        </li>
+                        <li>
+                            <h4>Jquery</h4>
+                        </li>
+                        <li>
+                            <h4>Ajax</h4>
+                        </li>
+                        <li>
+                            <h4>Bootstrap</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--工作经历-->
+<section id="work-experience-page">
+    <div class="container">
+        <div class="work-experience-title">
+            <h2>工作经历</h2>
+        </div>
+    <div class="work-list">
+        <div class="work-list-point">
+            <i class="work-list-point-ico"></i>
+            2016/12
+        </div>
+        <section class="work-list-company">
+            <h3>湖南软测信息技术有限公司</h3>
+            <h4>——实习生</h4>
+            <p>熟悉项目开发流程，了解各种测试技术</p>
+        </section>
+        <div class="work-list-point">
+            <i class="work-list-point-ico"></i>
+            2016/10
+        </div>
+    </div>
+    </div>
+</section>
+<!--项目作品-->
+<section id="project-page">
+    <div class="banner">
+        <ul class="clearfix">
+            <li><a href="Mobile-E-commerce-sites/index.html"><div class="project1"><span>移动端电商前端</span></div></a></li>
+            <li><a href="beautiful/button%20hover/index.html"><div class="project2"><span>Button hover animation</span></div></a></li>
+            <li><a href="javascript:;"><div class="project3"><span>待续。。。</span></div></a></li>
+            <li><a href="javascript:;"><div class="project4"><span>待续。。。</span></div></a></li>
+            <li><a href="javascript:;"><div class="project5"><span>待续。。。</span></div></a></li>
+        </ul>
+        <span id="prev"></span>
+        <span id="next"></span>
+        <div class="showNav clearfix">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </div>
+    </div>
+</section>
+<!--联系我吧-->
+<section id="contact-me-page">
+    <div class="contact-me">
+        <p>快把我收到碗里吧😉</p>
+        <p>18163912622@163.com</p>
+    </div>
+</section>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>
