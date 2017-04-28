@@ -438,6 +438,9 @@ nav.navbar {
 .describe .infor ul {
     margin-bottom: 20px;
 }
+.describe .infor ul li span{
+    color: #ffc83d;
+}
 .describe .infor ul a:focus{
     text-decoration: none;
     color: #f5f5f5;
