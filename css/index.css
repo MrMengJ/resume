@@ -407,7 +407,7 @@ nav.navbar {
 #navbar-list li {
     background: #7f315a;
     /*margin-top:-.5px;*/
-    border-top: .5px solid #612020;
+    border-top: 1px solid #612020;
 }
 #navbar-list li:nth-of-type(1){
     border:none;
