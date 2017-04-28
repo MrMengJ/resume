@@ -162,8 +162,8 @@ var left; //轮播图列表当前left值
 var startX = 0;//手指接触屏幕时接触点的x坐标
 var endX = 0;//手指离开屏幕时接触点的x坐标
 var moveX = 0;//手指在屏幕上x轴方向上滑动的距离(向左划为负)
-var minX = -liW * 0.3;//滑动最小值
-var maxX = liW * 0.3;//滑动最大值
+var minX = -liW * 0.25;//滑动最小值
+var maxX = liW * 0.25;//滑动最大值
 var oldImgIndex;//轮播图虏轮播之前的序列号
 var automateBanner;//自动轮播定时器
 

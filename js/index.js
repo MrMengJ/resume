@@ -1,17 +1,20 @@
 $(function () {
+    console.log(maxX)
+    // 打开定时器自动轮播
+    automateBanner = play(nextImg, 3000);
     $(window).resize();
     //固定导航栏到顶部
     $('#nav-page').navFixed();
     //导航平滑滚动
     $('#first-page a').on('click', function (e) {
-        e.preventDefault();//防止目标锚点一闪而过的效果
+        e.preventDefault();//防止目标锚点一闪而过的视觉
         var $_this = $(this);
         $('html,body').stop().animate({
             'scrollTop': $($_this.attr('href')).offset().top
         }, 600)
     })
     $('#nav-page a').on('click', function (e) {
-        e.preventDefault();//防止目标锚点一闪而过的效果
+        e.preventDefault();//防止目标锚点一闪而过的视觉
         var $_this = $(this);
         $('html,body').stop().animate({
             'scrollTop': $($_this.attr('href')).offset().top - 52
@@ -37,27 +40,14 @@ $(function () {
     $('#next').on('click', function () {
         nextImg();
     })
-    // 打开定时器自动轮播
-    automateBanner = play(nextImg, 3000);
 
-    //鼠标进入轮播图区，左右轮播按钮显示,并关闭自动轮播
-    //鼠标离开轮博图区时，左右轮播按钮隐藏，并打开自动轮播
-    //jquery的mouseleave()跟mouseenter()在此处有bug,原因不明
-    $('#project-page')[0].onmouseover = function () {
-        $('#prev').css('display', 'block');
-        $('#next').css('display', 'block');
-        stop(automateBanner);
-    }
-    $('#project-page')[0].onmouseout = function () {
-        $('#prev').css('display', 'none');
-        $('#next').css('display', 'none');
-        automateBanner = play(nextImg, 3000);
-    }
 
     //圆形轮播按钮添加点击事件，点击按钮轮播对应轮播图
     addEvent(dots, 'click', btn);
     //轮播图触摸事件
     bannerTouch();
+
+
 })
 
 
@@ -81,10 +71,35 @@ $(window).resize(function () {
         'top': ($(window).height() - $('.welcome .greet').height()) / 2
     }, 600)
 
+    //鼠标进入轮播图区，左右轮播按钮显示,并关闭自动轮播
+    //鼠标离开轮博图区时，左右轮播按钮隐藏，并打开自动轮播
+    //jquery的mouseleave()跟mouseenter()在此处有bug,原因不明
+    $('#project-page')[0].onmouseover = function () {
+        $('#prev').css('display', 'block');
+        $('#next').css('display', 'block');
+        console.log("hello")
+        stop(automateBanner);
+    }
+    $('#project-page')[0].onmouseout = function () {
+        $('#prev').css('display', 'none');
+        $('#next').css('display', 'none');
+        automateBanner = play(nextImg, 3000);
+    }
+
     //如果是移动端，左右轮播按钮永远隐藏不再出现
     if (!isPC()){
         $('#prev').height(0).width(0);
         $('#next').height(0).width(0);
+        // $('#project-page')[0].onmouseover = function (e) {
+        //     console.log("hello")
+        //     // e.preventDefault();
+        //     stop(automateBanner);
+        //
+        // }
+        // $('#project-page')[0].onmouseout = function (e) {
+        //     console.log("你好")
+        //     e.preventDefault();
+        // }
     }
 })
 
@@ -228,8 +243,8 @@ var left; //轮播图列表当前left值
 var startX = 0;//手指接触屏幕时接触点的x坐标
 var endX = 0;//手指离开屏幕时接触点的x坐标
 var moveX = 0;//手指在屏幕上x轴方向上滑动的距离(向左划为负)
-var minX = -liW * 0.3;//滑动最小值
-var maxX = liW * 0.3;//滑动最大值
+var minX = -liW * 0.25;//滑动最小值
+var maxX = liW * 0.25;//滑动最大值
 var oldImgIndex;//轮播图虏轮播之前的序列号
 var automateBanner;//自动轮播定时器
 
@@ -547,12 +562,13 @@ function next() {
 function bannerTouch() {
     //touchstart
     liDom.on('touchstart',function(event) {
+        // event.preventDefault();
         startX = event.originalEvent.targetTouches[0].clientX;//获取开始x坐标
     })
 
     //touchmove
     liDom.on('touchmove',function (event) {
-        event.preventDefault();
+        // event.preventDefault();
         endX = event.originalEvent.targetTouches[0].clientX;//获取滑动结束时x坐标
         moveX = endX - startX;//手指移动的距离
         //图片偏移距离
@@ -565,8 +581,26 @@ function bannerTouch() {
         stop(automateBanner);
     })
 
+    //touchcannel
+    liDom.on('touchcannel',function (event) {
+        // event.preventDefault();
+        if (moveX > maxX){
+            lastImg();
+        }
+        else if(moveX < minX){
+            nextImg();
+        }
+        // 如果滑动距离不够,图片回弹
+        else {
+            liDom[imgIndex].style.webkitTransform = "translateX(0)";
+        }
+        // 手指离开后，打开定时器，开始自动轮播
+        automateBanner = play(nextImg,3000)
+    })
+
     //touchend
-    liDom.on('touchend',function () {
+    liDom.on('touchend',function (event) {
+        // event.preventDefault();
         if (moveX > maxX){
             lastImg();
         }
@@ -584,7 +618,7 @@ function bannerTouch() {
 
 
 //添加过渡动画
-$.fn.addTransition = function () {
+$.fn.addTransition = function (event) {
     var $_this = $(this)
     $_this.css({
         "webkitTransition": "all 0.3s linear 0s",
