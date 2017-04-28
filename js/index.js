@@ -88,16 +88,6 @@ $(window).resize(function () {
     if (!isPC()){
         $('#prev').height(0).width(0);
         $('#next').height(0).width(0);
-        // $('#project-page')[0].onmouseover = function (e) {
-        //     console.log("hello")
-        //     // e.preventDefault();
-        //     stop(automateBanner);
-        //
-        // }
-        // $('#project-page')[0].onmouseout = function (e) {
-        //     console.log("你好")
-        //     e.preventDefault();
-        // }
     }
 })
 
