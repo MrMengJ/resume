@@ -439,7 +439,7 @@ nav.navbar {
     margin-bottom: 20px;
 }
 .describe .infor ul li span,
-.describe .infor .character p span{
+.describe .character p span{
     color: #ffc83d;
 }
 .describe .infor ul a:focus{
