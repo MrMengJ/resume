@@ -1,5 +1,4 @@
 $(function () {
-    console.log(maxX)
     // 打开定时器自动轮播
     automateBanner = play(nextImg, 3000);
     $(window).resize();
@@ -77,7 +76,6 @@ $(window).resize(function () {
     $('#project-page')[0].onmouseover = function () {
         $('#prev').css('display', 'block');
         $('#next').css('display', 'block');
-        console.log("hello")
         stop(automateBanner);
     }
     $('#project-page')[0].onmouseout = function () {
@@ -138,7 +136,7 @@ $.fn.navFixed = function () {
 }
 
 
-//欢迎页下箭隐藏、显示
+//欢迎页下箭头隐藏、显示
 function arrowFade() {
     if ($('a.next-page img').css('display') == 'block') {
         $('a.next-page img').fadeOut('normal')
@@ -594,8 +592,15 @@ function bannerTouch() {
         else {
             liDom[imgIndex].style.webkitTransform = "translateX(0)";
         }
+        // 先关闭定时器然后在开启定时器
+        stop(automateBanner);
         // 手指离开后，打开定时器，开始自动轮播
         automateBanner = play(nextImg,3000)
+
+        //结束后重置各项参数
+        startX = 0;
+        endX = 0;
+        moveX = 0;
     })
 
     //touchend
@@ -611,8 +616,15 @@ function bannerTouch() {
         else {
             liDom[imgIndex].style.webkitTransform = "translateX(0)";
         }
+        // 先关闭定时器然后在开启定时器
+        stop(automateBanner);
         // 手指离开后，打开定时器，开始自动轮播
         automateBanner = play(nextImg,3000)
+
+        //结束后重置各项参数
+        startX = 0;
+        endX = 0;
+        moveX = 0;
     })
 }
 
