@@ -521,11 +521,11 @@ nav.navbar {
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -ms-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 .skills-level li:nth-of-type(1) h4{
     width: 0%;

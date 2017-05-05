@@ -166,6 +166,7 @@ $.fn.widthChange = function (width) {
     var $_this = $(this);
     $_this.width(width)
 }
+
 //skills-level过渡动画
 $(document).scroll(function () {
     var $scrollTop;
