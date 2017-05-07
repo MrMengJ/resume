@@ -1,0 +1,168 @@
+/*公共样式*/
+/*消除间距*/
+* {
+    padding: 0;
+    margin:0;
+}
+
+/*清除浮动*/
+.clearfix{
+    *zoom: 1;
+}
+.clearfix::before,
+.clearfix::after{
+    content: ' ';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+/*左右浮动*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+
+
+/*主体样式*/
+/*外包裹层样式*/
+.container {
+    width: 800px;
+    margin: 0 auto;
+    background: url("../img/container_bak.jpg") no-repeat;
+    background-size: cover;
+}
+
+/*棋盘画布样式*/
+canvas.chessboard{
+    background: url("../img/chessboard_bak2.jpg") no-repeat;
+    -webkit-background-size:cover;
+    background-size:cover;
+    cursor: pointer;
+}
+
+/*棋子选项面板*/
+.options{
+    width:200px;
+    height: 600px;
+    position: relative;
+    color: #a21e51;
+    letter-spacing: 2px;
+    /*禁止文字被选中*/
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    -khtml-user-select:none;/*早期浏览器*/
+    user-select:none;
+}
+.options .choose{
+    color: #f5f5f5;
+    font-size: 20px;
+    margin-top: 60px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.options .chessman{
+    height:40px;
+    margin:60px auto;
+    text-align: center;
+}
+.options .chessman span{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -ms-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+}
+.options .chessman span.white-chessman{
+    background: url("../img/white.png") no-repeat;
+    margin-right: 20px;
+}
+.options .chessman span.white-chessman:hover{
+    margin-top: 2px;
+    /*为什么黑棋子会跟着一起动？？*/
+}
+.options .chessman span.black-chessman{
+    background: url("../img/black.png") no-repeat;
+}
+.options .chessman span.black-chessman:hover{
+    margin-top: 2px;
+    /*为什么白棋子会跟着一起动？？*/
+}
+.options .handle{
+    width:180px;
+    position: absolute;
+    left:50%;
+    bottom:40px;
+    margin-left:-90px;
+    text-align: center;
+}
+.options .handle .chess_back{
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    background: #e5b988;
+    margin:40px auto;
+    cursor: pointer;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+.options .handle .chess_back:hover{
+    background: #a2692d;
+    color: #d4a271;
+}
+.options .handle .chess_back .count{
+    display: inline-block;
+    width:22px;
+    height: 22px;
+    line-height: 22px;
+    background: #be853b;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}
+.options .handle .restart{
+    width:100px;
+    height: 40px;
+    line-height: 40px;
+    background: #e5b988;
+    margin:40px auto;
+    cursor: pointer;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+.options .handle .restart:hover{
+    background: #a2692d;
+    color: #d4a271;
+}
+.options .handle .restart span {
+    display: inline-block;
+    width:26px;
+    height: 26px;
+    background: url("../img/restart.png") no-repeat;
+    background-size: contain;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+
+.move_chess{
+    position: absolute;
+    display: none;
+    width:36px;
+    height:36px;
+    /*background: url("../img/white.png") no-repeat;*/
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+}

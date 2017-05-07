@@ -395,5 +395,14 @@ function all_category() {
             $(this).attr('src',$(this).data('src'))
         })
         yhqPannel.addClass('active').siblings().removeClass('active');
+
+        angle += 180;
+        $(".bar_right").find('img').css({
+            webkitTransform: "rotate(" + angle + "deg)",
+            mozTransform: "rotate(" + angle + "deg)",
+            msTransform: "rotate(" + angle + "deg)",
+            oTransform: "rotate(" + angle + "deg)",
+            transform: "rotate(" + angle + "deg)",
+        })
     })
 }
