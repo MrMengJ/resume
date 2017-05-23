@@ -1,6 +1,4 @@
 $(function () {
-    // 打开定时器自动轮播
-    automateBanner = play(nextImg, 3000);
     $(window).resize();
     //固定导航栏到顶部
     $('#nav-page').navFixed();
@@ -39,8 +37,8 @@ $(function () {
     $('#next').on('click', function () {
         nextImg();
     })
-
-
+    // 打开定时器自动轮播
+    automateBanner = play(nextImg, 3000);
     //圆形轮播按钮添加点击事件，点击按钮轮播对应轮播图
     addEvent(dots, 'click', btn);
     //轮播图触摸事件
