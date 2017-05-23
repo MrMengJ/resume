@@ -152,15 +152,27 @@ function categoryMove() {
         if ((endTime - startTime) < 200 && moveX == 0){
             // console.log(123)
             // 判断事件发生身上
-            if (event.target.tagName == 'SPAN'){
-                var target = event.target.parentNode;
-                //当前span为'active'状态
-                $(event.target).addClass('active').parent().siblings().children().removeClass('active');
-
-            }else if(event.target.tagName == 'LI'){
-                var target = event.target;
-                //当前span为'active'状态
+                if (event.target.tagName == 'SPAN'){
+                    var target = event.target.parentNode;
+                    //当前span为'active'状态
+                    $(event.target).addClass('active').parent().siblings().children().removeClass('active');
+                }else if(event.target.tagName == 'LI'){
+                    var target = event.target;
+                    //当前span为'active'状态
                 $(target).children().addClass('active').parent().siblings().children().removeClass('active')
+                }
+                if($(".all-category").hasClass('active')){
+                angle += 180;
+                $(".bar_right").find('img').css({
+                    webkitTransform: "rotate(" + angle + "deg)",
+                    mozTransform: "rotate(" + angle + "deg)",
+                    msTransform: "rotate(" + angle + "deg)",
+                    oTransform: "rotate(" + angle + "deg)",
+                    transform: "rotate(" + angle + "deg)",
+                })
+                $(".all-category").removeClass('active');
+                $('.shade').height(0);
+                $(".all-category-wrap").hide(300)
             }
 
             //遮罩高度为0
