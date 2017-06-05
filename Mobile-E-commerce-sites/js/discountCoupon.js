@@ -160,7 +160,8 @@ function categoryMove() {
                     var target = event.target;
                     //当前span为'active'状态
                 $(target).children().addClass('active').parent().siblings().children().removeClass('active')
-                }
+            }
+            /*如果此时分类列表是展开的,则隐藏*/
                 if($(".all-category").hasClass('active')){
                 angle += 180;
                 $(".bar_right").find('img').css({
@@ -169,10 +170,10 @@ function categoryMove() {
                     msTransform: "rotate(" + angle + "deg)",
                     oTransform: "rotate(" + angle + "deg)",
                     transform: "rotate(" + angle + "deg)",
-                })
+                });
                 $(".all-category").removeClass('active');
                 $('.shade').height(0);
-                $(".all-category-wrap").hide(300)
+                $(".all-category-wrap").hide(300);
             }
 
             //遮罩高度为0
@@ -279,14 +280,10 @@ function toggle_category() {
             // $(".all-category-wrap").height(0);//暂时还无法添加动画效果
 
         }else{
-            all_category.addClass('active')
+            all_category.addClass('active');
             $('.shade').height(document.body.clientHeight);
-            $(".all-category-wrap").show(300)
-
+            $(".all-category-wrap").show(300);
         }
-
-
-
     })
 }
 
