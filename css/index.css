@@ -561,7 +561,11 @@ nav.navbar {
     background: #9af394;
     border-color: #2ac020;
 }
-
+.skills-level li:nth-of-type(7) h4{
+    width: 0%;
+    background: #4fc08d;
+    border-color: #0F92AE;
+}
 
 /*工作经验*/
 #work-experience-page{

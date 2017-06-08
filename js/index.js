@@ -167,7 +167,7 @@ $.fn.rotate = function (angle) {
 //宽度变化函数
 $.fn.widthChange = function (width) {
     var $_this = $(this);
-    $_this.width(width)
+    $_this.width(width);
 }
 
 //skills-level过渡动画
@@ -181,6 +181,7 @@ $(document).scroll(function () {
         $('.skills-level li').eq(3).children('h4').widthChange($('.skills-level li').width() * 0.6);
         $('.skills-level li').eq(4).children('h4').widthChange($('.skills-level li').width() * 0.6);
         $('.skills-level li').eq(5).children('h4').widthChange($('.skills-level li').width() * 0.5);
+        $('.skills-level li').eq(6).children('h4').widthChange($('.skills-level li').width() * 0.4);
     }
 })
 
