@@ -83,9 +83,14 @@ $(window).resize(function () {
     }
 
     //如果是移动端，左右轮播按钮永远隐藏不再出现
+    //QQ调用接口改为手机端接口
     if (!isPC()){
         $('#prev').height(0).width(0);
         $('#next').height(0).width(0);
+        //QQ调用接口改为手机端接口
+        $('.qq').attr('href','mqqwpa://im/chat?chat_type=wpa&uin=951093467&version=1&src_type=web&web_src=oicqzone.com');
+        //个人信息栏行距为1.8
+        $('.infor li').css('line-height','1.8');
     }
 })
 
