@@ -8,7 +8,7 @@ $(function () {
         var $_this = $(this);
         $('html,body').stop().animate({
             'scrollTop': $($_this.attr('href')).offset().top
-        }, 600)
+        }, 600);
     })
     $('#nav-page a').on('click', function (e) {
         e.preventDefault();//防止目标锚点一闪而过的视觉
@@ -175,19 +175,28 @@ $(document).scroll(function () {
     var $scrollTop;
     $scrollTop = $(document).scrollTop();
     if ($scrollTop >= $('.skills-level').offset().top - $(window).height() / 2) {
-        $('.skills-level li').eq(0).children('h4').widthChange($('.skills-level li').width() * 0.8);
-        $('.skills-level li').eq(1).children('h4').widthChange($('.skills-level li').width() * 0.8);
-        $('.skills-level li').eq(2).children('h4').widthChange($('.skills-level li').width() * 0.7);
-        $('.skills-level li').eq(3).children('h4').widthChange($('.skills-level li').width() * 0.6);
-        $('.skills-level li').eq(4).children('h4').widthChange($('.skills-level li').width() * 0.6);
-        $('.skills-level li').eq(5).children('h4').widthChange($('.skills-level li').width() * 0.5);
-        $('.skills-level li').eq(6).children('h4').widthChange($('.skills-level li').width() * 0.4);
+        $('.skills-level .skills-item-name').eq(0).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.8);
+        $('.skills-level .skills-item-name').eq(1).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.8);
+        $('.skills-level .skills-item-name').eq(2).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.7);
+        $('.skills-level .skills-item-name').eq(3).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.6);
+        $('.skills-level .skills-item-name').eq(4).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.6);
+        $('.skills-level .skills-item-name').eq(5).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.5);
+        $('.skills-level .skills-item-name').eq(6).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.4);
     }
-})
+});
+//技能水平描述的淡入淡出
+$('.skills-level .skills-item-name').mouseenter(function () {
+    if (parseInt($(this).find('h4').css('width')) > 25) {
+         $(this).find('.skills-description').fadeIn(400);
+    }
+});
+$('.skills-level .skills-item-name').mouseleave(function () {
+    $(this).find('.skills-description').fadeOut(100);
+});
 
 //汉堡菜单自动收起
 function buttonHide() {
-    // 点击菜品之后隐藏菜单
+    // 点击菜单之后隐藏菜单
     $('.navbar-collapse li a').on('click', function () {
         $('#navbar-list').addClass('collapsing');
         $('#navbar-list').removeClass('collapse');

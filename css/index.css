@@ -515,10 +515,10 @@ nav.navbar {
 .skills-wrap .skills-level{
 
 }
-.skills-level li{
+.skills-level .skills-item-name{
     margin-bottom: 20px;
 }
-.skills-level li h4{
+.skills-level .skills-item-name h4{
     border-left: 6px solid transparent;
     color: #951a97;
     padding-left:12px;
@@ -531,40 +531,65 @@ nav.navbar {
     -o-transition: all 1s ease-out;
     transition: all 1s ease-out;
 }
-.skills-level li:nth-of-type(1) h4{
+
+.skills-level .skills-item-name{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.skills-level .skills-item-name:nth-of-type(1) h4{
     width: 0%;
     background: #a2efee;
     border-color: #339795;
 }
-.skills-level li:nth-of-type(2) h4{
+.skills-level .skills-item-name:nth-of-type(2) h4{
     width: 0%;
     background: #a2efee;
     border-color: #339795;
 }
-.skills-level li:nth-of-type(3) h4{
+.skills-level .skills-item-name:nth-of-type(3) h4{
     width: 0%;
     background: #eaf6d0;
     border-color: #96b552;
 }
-.skills-level li:nth-of-type(4) h4{
+.skills-level .skills-item-name:nth-of-type(4) h4{
     width: 0%;
     background: #eaf6d0;
     border-color: #96b552;
 }
-.skills-level li:nth-of-type(5) h4{
+.skills-level .skills-item-name:nth-of-type(5) h4{
     width: 0%;
     background: #9af394;
     border-color: #2ac020;
 }
-.skills-level li:nth-of-type(6) h4{
+.skills-level .skills-item-name:nth-of-type(6) h4{
     width: 0%;
     background: #9af394;
     border-color: #2ac020;
 }
-.skills-level li:nth-of-type(7) h4{
+.skills-level .skills-item-name:nth-of-type(7) h4{
     width: 0%;
     background: #4fc08d;
     border-color: #0F92AE;
+}
+.skills-description{
+    position: absolute;
+    top: 5px;
+    left: 20%;
+    display: none;
+    padding: 5px 20px;
+    color: #333;
+    background: rgba(255,255,255,.8);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+    z-index: 1000;
+}
+.skills-description li{
+    list-style: circle;
+    line-height: 1.5;
 }
 
 /*工作经验*/
@@ -729,7 +754,6 @@ nav.navbar {
 }
 
 
-
 /*联系我吧*/
 #contact-me-page {
     /*margin-top: -8px;*/
@@ -738,9 +762,3 @@ nav.navbar {
     text-align: center;
     background: #ff5f5f;
 }
-
-
-
-
-
-
