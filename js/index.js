@@ -84,13 +84,13 @@ $(window).resize(function () {
 
     //如果是移动端，左右轮播按钮永远隐藏不再出现
     //QQ调用接口改为手机端接口
-    if (!isPC()){
+    if (!isPC()) {
         $('#prev').height(0).width(0);
         $('#next').height(0).width(0);
         //QQ调用接口改为手机端接口
-        $('.qq').attr('href','mqqwpa://im/chat?chat_type=wpa&uin=951093467&version=1&src_type=web&web_src=oicqzone.com');
+        $('.qq').attr('href', 'mqqwpa://im/chat?chat_type=wpa&uin=951093467&version=1&src_type=web&web_src=oicqzone.com');
         //个人信息栏行距为1.8
-        $('.infor li').css('line-height','1.8');
+        $('.infor li').css('line-height', '1.8');
     }
 })
 
@@ -184,14 +184,23 @@ $(document).scroll(function () {
         $('.skills-level .skills-item-name').eq(6).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.4);
     }
 });
+
 //技能水平描述的淡入淡出
+//添加active类名是为了注入标记，避免同时出现多个描述框，只有别的描述框隐藏了才会出现下一个描述框
 $('.skills-level .skills-item-name').mouseenter(function () {
     if (parseInt($(this).find('h4').css('width')) > 25) {
-         $(this).find('.skills-description').fadeIn(400);
+        var _this = $(this);
+                _this.find('.skills-description').fadeIn(200);
+            }
+        // }, 100);
     }
 });
 $('.skills-level .skills-item-name').mouseleave(function () {
-    $(this).find('.skills-description').fadeOut(100);
+    var _this = $(this);
+    // setTimeout(function () {
+        _this.find('.skills-description').css('display','none');
+        _this.removeClass('active');
+    // }, 100);
 });
 
 //汉堡菜单自动收起
@@ -532,7 +541,7 @@ function next() {
                 liDom[liLength - 1].style.msTransform = "translateX(-100%)";
                 liDom[liLength - 1].style.oTransform = "translateX(-100%)";
                 liDom[liLength - 1].style.transform = "translateX(-100%)";
-                if (oldImgIndex == liLength -1){
+                if (oldImgIndex == liLength - 1) {
                     liDom.eq(liLength - 1).addTransition();
                     liDom[liLength - 1].style.webkitTransform = "translateX(-100%)";
                     liDom[liLength - 1].style.mozTransform = "translateX(-100%)";
@@ -563,33 +572,33 @@ function next() {
 // 轮播图触摸(touch)事件
 function bannerTouch() {
     //touchstart
-    liDom.on('touchstart',function(event) {
+    liDom.on('touchstart', function (event) {
         // event.preventDefault();
         startX = event.originalEvent.targetTouches[0].clientX;//获取开始x坐标
     })
 
     //touchmove
-    liDom.on('touchmove',function (event) {
+    liDom.on('touchmove', function (event) {
         // event.preventDefault();
         endX = event.originalEvent.targetTouches[0].clientX;//获取滑动结束时x坐标
         moveX = endX - startX;//手指移动的距离
         //图片偏移距离
-        liDom[imgIndex].style.webkitTransform = "translateX("+moveX*0.75+"px)";
-        liDom[imgIndex].style.mozTransform = "translateX("+moveX*0.75+"px)";
-        liDom[imgIndex].style.msTransform = "translateX("+moveX*0.75+"px)";
-        liDom[imgIndex].style.oTransform = "translateX("+moveX*0.75+"px)";
-        liDom[imgIndex].style.transform = "translateX("+moveX*0.75+"px)";
+        liDom[imgIndex].style.webkitTransform = "translateX(" + moveX * 0.75 + "px)";
+        liDom[imgIndex].style.mozTransform = "translateX(" + moveX * 0.75 + "px)";
+        liDom[imgIndex].style.msTransform = "translateX(" + moveX * 0.75 + "px)";
+        liDom[imgIndex].style.oTransform = "translateX(" + moveX * 0.75 + "px)";
+        liDom[imgIndex].style.transform = "translateX(" + moveX * 0.75 + "px)";
         // 滑动过程中关闭定时器，暂停自动轮播
         stop(automateBanner);
     })
 
     //touchcannel
-    liDom.on('touchcannel',function (event) {
+    liDom.on('touchcannel', function (event) {
         // event.preventDefault();
-        if (moveX > maxX){
+        if (moveX > maxX) {
             lastImg();
         }
-        else if(moveX < minX){
+        else if (moveX < minX) {
             nextImg();
         }
         // 如果滑动距离不够,图片回弹
@@ -599,7 +608,7 @@ function bannerTouch() {
         // 先关闭定时器然后在开启定时器
         stop(automateBanner);
         // 手指离开后，打开定时器，开始自动轮播
-        automateBanner = play(nextImg,3000)
+        automateBanner = play(nextImg, 3000)
 
         //结束后重置各项参数
         startX = 0;
@@ -608,12 +617,12 @@ function bannerTouch() {
     })
 
     //touchend
-    liDom.on('touchend',function (event) {
+    liDom.on('touchend', function (event) {
         // event.preventDefault();
-        if (moveX > maxX){
+        if (moveX > maxX) {
             lastImg();
         }
-        else if(moveX < minX){
+        else if (moveX < minX) {
             nextImg();
         }
         // 如果滑动距离不够,图片回弹
@@ -623,7 +632,7 @@ function bannerTouch() {
         // 先关闭定时器然后在开启定时器
         stop(automateBanner);
         // 手指离开后，打开定时器，开始自动轮播
-        automateBanner = play(nextImg,3000)
+        automateBanner = play(nextImg, 3000)
 
         //结束后重置各项参数
         startX = 0;
