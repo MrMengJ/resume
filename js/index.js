@@ -190,6 +190,10 @@ $(document).scroll(function () {
 $('.skills-level .skills-item-name').mouseenter(function () {
     if (parseInt($(this).find('h4').css('width')) > 25) {
         var _this = $(this);
+        var other = _this.siblings().find('.skills-description'); 
+        // setTimeout(function () {
+            if (!_this.siblings().hasClass('active')) {
+                _this.addClass('active');
                 _this.find('.skills-description').fadeIn(200);
             }
         // }, 100);
