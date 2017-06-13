@@ -182,6 +182,16 @@ $(document).scroll(function () {
         $('.skills-level .skills-item-name').eq(4).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.6);
         $('.skills-level .skills-item-name').eq(5).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.5);
         $('.skills-level .skills-item-name').eq(6).children('h4').widthChange($('.skills-level .skills-item-name').width() * 0.4);
+        // 汉堡菜单自动收起
+        $('#navbar-list').addClass('collapsing');
+        $('#navbar-list').removeClass('collapse');
+        $('#navbar-list').removeClass('in');
+        $('#navbar-list').attr('aria-expanded', 'false');
+        $('#navbar-list').attr('style', 'height:0.8px');
+        $('#navbar-list').removeClass('collapsing');
+        $('#navbar-list').addClass('collapse');
+        $('.navbar-toggle').addClass('collapsed');
+        $('.navbar-toggle').attr('aria-expanded', 'false');
     }
 });
 
@@ -572,6 +582,21 @@ function next() {
         }
     }
 }
+
+// 滑动屏幕隐藏汉堡菜单
+var doc = $(document);
+doc.on("touchstart",function (){
+  $('#navbar-list').addClass('collapsing');
+        $('#navbar-list').removeClass('collapse');
+        $('#navbar-list').removeClass('in');
+        $('#navbar-list').attr('aria-expanded', 'false');
+        $('#navbar-list').attr('style', 'height:0.8px');
+        $('#navbar-list').removeClass('collapsing');
+        $('#navbar-list').addClass('collapse');
+        $('.navbar-toggle').addClass('collapsed');
+        $('.navbar-toggle').attr('aria-expanded', 'false');
+});
+
 
 // 轮播图触摸(touch)事件
 function bannerTouch() {
