@@ -200,20 +200,20 @@ $(document).scroll(function () {
 $('.skills-level .skills-item-name').mouseenter(function () {
     if (parseInt($(this).find('h4').css('width')) > 25) {
         var _this = $(this);
-        var other = _this.siblings().find('.skills-description'); 
+        var other = _this.siblings().find('.skills-description');
         // setTimeout(function () {
-            if (!_this.siblings().hasClass('active')) {
-                _this.addClass('active');
-                _this.find('.skills-description').fadeIn(200);
-            }
+        if (!_this.siblings().hasClass('active')) {
+            _this.addClass('active');
+            _this.find('.skills-description').fadeIn(200);
+        }
         // }, 100);
     }
 });
 $('.skills-level .skills-item-name').mouseleave(function () {
     var _this = $(this);
     // setTimeout(function () {
-        _this.find('.skills-description').css('display','none');
-        _this.removeClass('active');
+    _this.find('.skills-description').css('display', 'none');
+    _this.removeClass('active');
     // }, 100);
 });
 
@@ -583,10 +583,14 @@ function next() {
     }
 }
 
-// 滑动屏幕隐藏汉堡菜单
+// 滑动屏幕隐藏汉堡菜单,但点击a标签不会及汉堡菜单触发事件
 var doc = $(document);
-doc.on("touchstart",function (){
-  $('#navbar-list').addClass('collapsing');
+doc.on("touchstart", function (event) {
+    var event = event || window.event;
+    var target = event.target || event.srcElement;
+    if (target.tagName !== "A" && target.getAttribute("data-toggle") === null) {
+        // alert("你好呀")
+        $('#navbar-list').addClass('collapsing');
         $('#navbar-list').removeClass('collapse');
         $('#navbar-list').removeClass('in');
         $('#navbar-list').attr('aria-expanded', 'false');
@@ -595,6 +599,7 @@ doc.on("touchstart",function (){
         $('#navbar-list').addClass('collapse');
         $('.navbar-toggle').addClass('collapsed');
         $('.navbar-toggle').attr('aria-expanded', 'false');
+    }
 });
 
 
