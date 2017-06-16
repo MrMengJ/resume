@@ -678,15 +678,15 @@ function bannerTouch() {
 
 //添加过渡动画
 $.fn.addTransition = function (event) {
-    var $_this = $(this)
+    var $_this = $(this);
     $_this.css({
         "webkitTransition": "all 0.3s linear 0s",
         "mozTransition": "all 0.3s linear 0s",
         "oTransition": "all 0.3s linear 0s",
         "msTransition": "all 0.3s linear 0s",
         "transition": "all 0.3s linear 0s",
-    })
-}
+    });
+};
 
 //删除过渡动画
 $.fn.removeTransition = function () {
