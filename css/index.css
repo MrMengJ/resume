@@ -627,8 +627,10 @@ nav.navbar {
 .work-list .work-list-company{
     padding-left:20px;
 }
-.work-list .work-list-company p{
+.work-list .work-list-company li{
     font-size: 16px;
+    line-height: 1.8;
+    list-style: disc inside;
 }
 
 /*项目作品*/
