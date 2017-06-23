@@ -690,7 +690,7 @@ $.fn.addTransition = function (event) {
 
 //删除过渡动画
 $.fn.removeTransition = function () {
-    var $_this = $(this)
+    var $_this = $(this);
     $_this.css({
         "webkitTransition": "all 0s linear 0s",
         "mozTransition": "all 0s linear 0s",
