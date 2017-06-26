@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" type="text/css" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/Normalize.css">
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!--[if lt IE 9]>
     <script type="text/javascript">
@@ -18,263 +20,340 @@
 
 
 <body>
-<!--首屏欢迎页-->
-<section id="first-page" class="welcome">
-    <p class="greet">欢迎你的光临</p>
-    <a class="next-page" href="#nav-page">
-        <img src="img/next-page.png" alt="">
-    </a>
-</section>
-<!--导航栏-->
-<nav id="nav-page">
-    <nav class="navbar navbar-me">
-        <div class="container">
-            <!--商标-->
-            <div class="navbar-header">
-                <!--菜单变换-->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list"
-                        aria-expanded="false">
+    <div class="cv-container">
+        <div id="section1" class="section active">
+            <div id="top" title="顶部">
+                <img src="img/top.png" alt="回到顶部">
+            </div>
+            <div class="myIntro">
+                <h1 class="fade">Hello, I'm MrMengJ</h1>
+                <h3 class="fade">一个追求极致的前端工程师</h3>
+                <a href="#section2"><span class="active fade" id="abMe">关于我</span></a>
+                <a href="#section5"><span id="mypro" class="fade">我的作品</span></a>
+            </div>
+            <ul class="bg-img">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a class="next-page" href="#section2">
+                <img src="img/next-page.png" alt="">
+            </a>
+        </div>
+        <!--导航栏-->
+        <nav id="nav-page">
+            <nav class="navbar navbar-me">
+                <div class="container">
+                    <!--商标-->
+                    <div class="navbar-header">
+                        <!--菜单变换-->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-list" aria-expanded="false">
                     <span class="sr-only">菜单切换</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#first-page">
+                        <a class="navbar-brand" href="#section1">
                     MrmengJ
                 </a>
-            </div>
-            <!--导航列表-->
-            <div class="collapse navbar-collapse" id="navbar-list">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#intro-page">个人简介</a></li>
-                    <li><a href="#skills-page">专业技能</a></li>
-                    <li><a href="#work-experience-page">工作经历</a></li>
-                    <li><a href="#project-page">项目作品</a></li>
-                    <li><a href="#contact-me-page">联系方式</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</nav>
-<!--个人简介-->
-<section id="intro-page">
-    <div class="intro-icon">
-        <img class="head-portrait" src="img/about-me.jpg" alt="My head portrait">
-    </div>
-    <div class="describe">
-        <div class="container">
-            <div class="row">
-                <div class="infor col-sm-6">
-                    <ul>
-                        <li><span>⭐ </span>姓名：孟津/MrMengJ</li>
-                        <li><span>⭐ </span>年龄：22</li>
-                        <li><span>⭐ </span><a href="tel:18163912622">手机：18163912622</a></li>
-                        <li><span>⭐ </span><a href="mailto:mrmengj@gmail.com">邮箱：mrmengj@gmail.com</a></li>
-                        <li><span>⭐ </span><a class='qq' href="tencent://message/?uin=951093467&Site=http://vps.shuidazhe.com&Menu=yes">Q Q：951093467</a></li>
-                        <li><span>⭐ </span><a href="https://github.com/MrMengJ" target="_blank">Github: 点击进入</a></li>
-                    </ul>
-                </div>
-                <div class="character col-sm-6">
-                    <p>
-                        <span>⭐ </span>我热爱团体，做事认真。<br/>
-                        <span>⭐ </span>我热爱技术，钟于钻研。<br/>
-                        <span>⭐ </span>自学能力不错，能及时总结经验。
-                    </p>
-                    <br/>
-                    <p>
-                        <span>⭐ </span>两年前端开发、学习经验，熟悉HTML(5)、CSS(3)、JavaScript，熟练使用Jquery框架，熟悉Bootstrap、vue，能完成大多数页面布局，能开发符合W3C标准的页面，能手写常见交互。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--专业技能-->
-<section id="skills-page">
-    <div class="container">
-        <div class="skills-title">
-            <h2>专业技能</h2>
-        </div>
-        <div class="skills-wrap">
-            <div class="skills-category">
-                <div class="skills-list row">
-                    <div class="row col-sm-6">
-                        <div class="col-xs-6">
-                            <ul>
-                                <li>语言</li>
-                                <li>HTML(5)</li>
-                                <li>CSS(3)</li>
-                                <li>Javascript(ES6)</li>
-                                <li>...</li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-6">
-                            <ul>
-                                <li>技术</li>
-                                <li>Ajax</li>
-                                <li>JSON</li>
-                                <li>PS VSCode</li>
-                                <li>...</li>
-                            </ul>
-                        </div>
                     </div>
-                    <div class="row col-sm-6">
-                        <div class="col-xs-6">
-                            <ul>
-                                <li>思想</li>
-                                <li>W3C标准</li>
-                                <li>语义化</li>
-                                <li>结构样式分离</li>
-                                <li>模块化</li>
-                                <li>组件化</li>
-                                <li>解耦合</li>
-                                <li>...</li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-6">
-                            <ul>
-                                <li>框架</li>
-                                <li>Jquery</li>
-                                <li>Bootstrap</li>
-                                <li>Vue</li>
-                                <li>...</li>
-                            </ul>
+                    <!--导航列表-->
+                    <div class="collapse navbar-collapse" id="navbar-list">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#section2">个人简介</a></li>
+                            <li><a href="#section3">专业技能</a></li>
+                            <li><a href="#section4">工作经历</a></li>
+                            <li><a href="#section5">项目作品</a></li>
+                            <li><a href="#section6">联系方式</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+        <!--关于我-->
+        <section id="section2" class="section">
+            <h2>关于我</h2>
+            <hr>
+            <div class="wrap fades">
+                <div class="intro-icon">
+                    <img class="head-portrait" src="img/about-me.jpg" alt="My head portrait">
+                </div>
+                <div class="describe">
+                    <div class="container">
+                        <div class="row">
+                            <div class="infor col-sm-6">
+                                <ul>
+                                    <li><span><img src="img/name.png" alt=""></span>&nbsp;姓名：孟津/MrMengJ</li>
+                                    <li><span><img src="img/age.png" alt=""></span>&nbsp;年龄：22</li>
+                                    <li><span><img src="img/phone.png" alt=""></span><a href="tel:18163912622">手机：18163912622</a></li>
+                                    <li><span><img src="img/email.png" alt=""></span><a href="mailto:mrmengj@gmail.com">&nbsp;邮箱：mrmengj@gmail.com</a></li>
+                                    <li><span><img src="img/QQ.png" alt=""></span><a class='qq' href="tencent://message/?uin=951093467&Site=http://vps.shuidazhe.com&Menu=yes">&nbsp;Q Q：951093467</a></li>
+                                    <li><span><img src="img/github.png" alt=""></span><a href="https://github.com/MrMengJ" target="_blank">&nbsp;Github: 点击进入</a></li>
+                                </ul>
+                            </div>
+                            <div class="character col-sm-6">
+                                <p>
+                                    <span><img src="img/introduce.png" alt=""> </span>&nbsp;我热爱团体，做事认真。<br/>
+                                    <span><img src="img/introduce.png" alt=""> </span>&nbsp;我热爱技术，钟于钻研。<br/>
+                                    <span><img src="img/introduce.png" alt=""></span>&nbsp;自学能力不错，能及时总结经验。
+                                </p>
+                                <br/>
+                                <p>
+                                    <span><img src="img/introduce.png" alt=""></span>&nbsp;两年前端开发、学习经验，熟悉HTML(5)、CSS(3)、JavaScript，熟练使用Jquery框架，熟悉Bootstrap、vue，能完成大多数页面布局，能开发符合W3C标准的页面，能手写常见交互。
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="skills-level">
-                <div class="wrap">
-                    <ul class="skills-list">
-                        <li class="skills-item-name">
-                            <h4>HTML(5)</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                     <li>首先构思、搭建网页总体结构</li>
-                                    <li>编写语义化网页</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="skills-item-name">
-                            <h4>CSS(3)</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                    <li>能使用合理的结构和样式编写兼容主流浏览器的页面</li>
-                                    <li>在现代浏览器上适当的使用CSS3使网页效果更好</li>
-                                    <li>CSS“渐进增强”式编程</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="skills-item-name">
-                            <h4>Javascript</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                    <li>熟悉原生Javascript，能够脱离JQuery等类库编码</li>
-                                    <li>熟悉正则表达式的使用</li>
-                                    <li>能熟练使用Chrome开发者工具进行辅助开发</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="skills-item-name">
-                            <h4>Jquery</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                    <li>熟练使用Jquery框架</li>
-                                    <li>能够编写基于Jquery的插件</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="skills-item-name">
-                            <h4>Ajax</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                    <li>明晰Ajax的工作原理</li>
-                                    <li>注重与后端的配合</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="skills-item-name">
-                            <h4>Bootstrap</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                    <li>熟练使用Bootstrap的栅格系统</li>
-                                    <li>能够对Bootstrap进行自定义的样式重构</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="skills-item-name">
-                            <h4>Vue</h4>
-                            <div class="skills-description">
-                                <ul class=skills-description-list"">
-                                    <li>熟悉vue常见指令跟方法的使用</li>
-                                    <li>明晰vue的数据驱动和组件系统</li>
-                                    <li>理解vue的生命周期</li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--工作经历-->
-<section id="work-experience-page">
-    <div class="container">
-        <div class="work-experience-title">
-            <h2>工作经历</h2>
-        </div>
-    <div class="work-list">
-        <div class="work-list-point">
-            <i class="work-list-point-ico"></i>
-            2017/5
-        </div>
-        <section class="work-list-company">
-            <h3><a href="http://www.liyitop.com/" target="_blank">搜酷信息技术有限公司</a></h3>
-            <h4>——Web前端开发</h4>
-            <ul>
-              <li>负责网站的前端实现，根据UI设计图快速生成web界面</li>
-              <li>配合后端完成整个项目</li>
-              <li>网站后期维护</li>
-            </ul>
         </section>
-        <div class="work-list-point">
-            <i class="work-list-point-ico"></i>
-            2015/7
-        </div>
+        <!--专业技能-->
+        <section id="section3" class="section">
+            <div class="container">
+                <div class="skills-title">
+                    <h2>专业技能</h2>
+                    <hr>
+                </div>
+                <div class="skills-wrap center fades">
+                    <div class="skills-category">
+                        <div class="skills-list row">
+                            <div class="row col-sm-6">
+                                <div class="col-xs-6">
+                                    <ul>
+                                        <li>语言</li>
+                                        <li>HTML(5)</li>
+                                        <li>CSS(3)</li>
+                                        <li>Javascript(ES6)</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6">
+                                    <ul>
+                                        <li>技术</li>
+                                        <li>Ajax</li>
+                                        <li>JSON</li>
+                                        <li>PS VSCode</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row col-sm-6">
+                                <div class="col-xs-6">
+                                    <ul>
+                                        <li>思想</li>
+                                        <li>W3C标准</li>
+                                        <li>语义化</li>
+                                        <li>结构样式分离</li>
+                                        <li>模块化</li>
+                                        <li>组件化</li>
+                                        <li>解耦合</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                                <div class="col-xs-6">
+                                    <ul>
+                                        <li>框架</li>
+                                        <li>Jquery</li>
+                                        <li>Bootstrap</li>
+                                        <li>Vue</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-level">
+                        <div class="wrap">
+                            <ul class="skills-list">
+                                <li class="skills-item-name">
+                                    <h4>HTML(5)</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>首先构思、搭建网页总体结构</li>
+                                            <li>编写语义化网页</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="skills-item-name">
+                                    <h4>CSS(3)</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>能使用合理的结构和样式编写兼容主流浏览器的页面</li>
+                                            <li>在现代浏览器上适当的使用CSS3使网页效果更好</li>
+                                            <li>CSS“渐进增强”式编程</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="skills-item-name">
+                                    <h4>Javascript</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>熟悉原生Javascript，能够脱离JQuery等类库编码</li>
+                                            <li>熟悉正则表达式的使用</li>
+                                            <li>能熟练使用Chrome开发者工具进行辅助开发</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="skills-item-name">
+                                    <h4>Jquery</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>熟练使用Jquery框架</li>
+                                            <li>能够编写基于Jquery的插件</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="skills-item-name">
+                                    <h4>Ajax</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>明晰Ajax的工作原理</li>
+                                            <li>注重与后端的配合</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="skills-item-name">
+                                    <h4>Bootstrap</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>熟练使用Bootstrap的栅格系统</li>
+                                            <li>能够对Bootstrap进行自定义的样式重构</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="skills-item-name">
+                                    <h4>Vue</h4>
+                                    <div class="skills-description">
+                                        <ul class=skills-description-list "">
+                                            <li>熟悉vue常见指令跟方法的使用</li>
+                                            <li>明晰vue的数据驱动和组件系统</li>
+                                            <li>理解vue的生命周期</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--工作经历-->
+        <section id="section4" class="section">
+            <div class="container">
+                <div class="work-experience-title">
+                    <h2>工作经历</h2>
+                    <hr>
+                </div>
+                <div class="work-list fades">
+                    <div class="work-list-point">
+                        <i class="work-list-point-ico"></i> 2017/5
+                    </div>
+                    <section class="work-list-company">
+                        <h3><a href="http://www.liyitop.com/" target="_blank">搜酷信息技术有限公司</a></h3>
+                        <h4>——Web前端开发</h4>
+                        <ul>
+                            <li>负责网站的前端实现，根据UI设计图快速生成web界面</li>
+                            <li>配合后端完成整个项目</li>
+                            <li>网站后期维护</li>
+                        </ul>
+                    </section>
+                    <div class="work-list-point">
+                        <i class="work-list-point-ico"></i> 2015/7
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--项目作品-->
+        <section id="section5" class="section">
+            <h2>项目作品</h2>
+            <hr>
+            <div class="container center fades">
+                <p class="center intros">能手写就手写，尽量不依赖插件，能够提升自己的技术水平。</p>
+                <div class="col-md-3 col-xs-6 ">
+                    <div class="imgbox">
+                        <img src="img/07.jpg" alt="作品配图">
+                    </div>
+                    <a href="http://www.cbecm.com/Live/Index/m_index" target="_blank">
+                        <div class="zp-cover">
+                            <h4>清风电竞直播页移动端</h4>
+                            <p>列表页，兼容安卓、ios、平板</p>
+                            <img src="img/search.png" alt="查看">
+                        </div>
+                    </a>
+                </div>
+                 <div class="col-md-3 col-xs-6 ">
+                    <div class="imgbox">
+                        <img src="img/05.jpg" alt="作品配图">
+                    </div>
+                    <a href="http://zfm18.com/" target="_blank">
+                        <div class="zp-cover">
+                            <h4>掌肥猫</h4>
+                            <p>负责购物车、商品详情页的开发</p>
+                            <img src="img/search.png" alt="查看">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="imgbox">
+                        <img src="img/01.jpg" alt="作品配图">
+                    </div>
+                    <a href="https://mrmengj.github.io/mobile-e-commerce/index.html" target="_blank">
+                        <div class="zp-cover">
+                            <h4>移动端电商</h4>
+                            <p>媒体查询</p>
+                            <p>移动端rem适配</p>
+                            <img src="img/search.png" alt="查看">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="imgbox">
+                        <img src="img/06.jpg" alt="作品配图">
+                    </div>
+                    <a href="https://mrmengj.github.io/plugins/slideshow/jQuery-slideshow/index.html" target="_blank">
+                        <div class="zp-cover" style="top: 45%">
+                            <h4>轮播图插件</h4>
+                            <p>“循环轮播”跟”跳转轮播”对应不同的轮播逻辑</p>
+                            <p>使用方法跟源代码可进入我的Github主页查看</p>
+                            <img src="img/search.png" alt="查看">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-xs-6 ">
+                    <div class="imgbox">
+                        <img src="img/02.jpg" alt="作品配图">
+                    </div>
+                    <a href="https://mrmengj.github.io/some-demo/five-in-a-row/index.html" target="_blank">
+                        <div class="zp-cover">
+                            <h4>canvas五子棋</h4>
+                            <p>用html5的canvas画布完成的简易五子棋</p>
+                            <img src="img/search.png" alt="查看">
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </section>
+        <!--联系我吧-->
+        <section id="section6" class="section">
+            <h2>联系我吧</h2>
+            <hr>
+            <div class="contact-me fades">
+                <p>快把我收到碗里吧😉</p>
+                <p><span><img src="img/QQ.png" alt=""></span><a class='qq' href="tencent://message/?uin=951093467&Site=http://vps.shuidazhe.com&Menu=yes">&nbsp;QQ：951093467</a></p>
+                <p><span><img src="img/phone.png" alt=""></span><a href="tel:18163912622">&nbsp;手机：18163912622</a></p>
+                <p><span><img src="img/email.png" alt=""></span><a href="mailto:mrmengj@gmail.com">&nbsp;邮箱：mrmengj@gmail.com</a></p>
+                
+            </div>
+        </section>
     </div>
-    </div>
-</section>
-<!--项目作品-->
-<section id="project-page">
-    <div class="banner">
-        <ul class="clearfix">
-            <li><a href="https://mrmengj.github.io/mobile-e-commerce/" target="_blank"><div class="project1"><span>移动端电商前端</span></div></a></li>
-            <li><a href="https://mrmengj.github.io/plugins/slideshow/jQuery-slideshow/index.html" target="_blank"><div class="project2"><span>轮播图插件</span></div></a></li>
-            <li><a href="https://github.com/MrMengJ/some-demo" target="_blank"><div class="project3"><span>some-demo</span></div></a></li>
-            <li><a href="javascript:;"><div class="project4"><span>待续。。。</span></div></a></li>
-            <li><a href="javascript:;"><div class="project5"><span>待续。。。</span></div></a></li>
-        </ul>
-        <span id="prev"></span>
-        <span id="next"></span>
-        <div class="showNav clearfix">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </div>
-    </div>
-</section>
-<!--联系我吧-->
-<section id="contact-me-page">
-    <div class="contact-me">
-        <p>快把我收到碗里吧😉</p>
-        <p>mrmengj@gmail.com</p>
-    </div>
-</section>
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
