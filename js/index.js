@@ -190,13 +190,12 @@ $(document).scroll(function () {
     var $scrollTop;
     $scrollTop = $(document).scrollTop();
     if ($scrollTop >= $('#section3').offset().top + $(window).height() / 2) {
-        $('#section3 .skills-item-name').eq(0).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.8);
-        $('#section3 .skills-item-name').eq(1).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.8);
-        $('#section3 .skills-item-name').eq(2).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.7);
-        $('#section3 .skills-item-name').eq(3).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.6);
-        $('#section3 .skills-item-name').eq(4).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.6);
-        $('#section3 .skills-item-name').eq(5).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.5);
-        $('#section3 .skills-item-name').eq(6).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.4);
+        $('#section3 .skills-item-name').eq(0).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.9);
+        $('#section3 .skills-item-name').eq(1).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.9);
+        $('#section3 .skills-item-name').eq(2).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.8);
+        $('#section3 .skills-item-name').eq(3).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.8);
+        $('#section3 .skills-item-name').eq(4).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.7);
+        $('#section3 .skills-item-name').eq(5).children('h4').widthChange($('#section3 .skills-item-name').width() * 0.6);
         // 汉堡菜单自动收起
         $('#navbar-list').addClass('collapsing');
         $('#navbar-list').removeClass('collapse');

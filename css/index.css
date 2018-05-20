@@ -555,6 +555,7 @@ nav.navbar {
     border-radius: 3px;
     font-size: 14px;
     z-index: 1000;
+    text-align: left;
 }
 .skills-description li{
     list-style: circle;
